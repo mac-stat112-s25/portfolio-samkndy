@@ -36,7 +36,7 @@ We'll address the above questions using `ggplot` tools. Try running the followin
 
 ```{r}
 # Use the ggplot function
-ggplot(hikes, aes(x = rating))
+# ggplot(hikes, aes(x = rating))
 ```
 
 In order to use `ggplot` tools, we have to first *load* the `tidyverse` package in which they live. We've *installed* the package but we need to tell R when we want to *use* it. Run the chunk below to load the library. You'll need to do this within any .qmd file that uses `ggplot()`.
