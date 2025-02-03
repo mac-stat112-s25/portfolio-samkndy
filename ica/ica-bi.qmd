@@ -2,4 +2,156 @@
 title: "Bivariate Viz"
 ---
 
-Use this file for practice with the **bivariate viz** in-class activity.  Refer to the class website for details.
+```{r}
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
+
+head(elections)
+
+library(tidyverse)
+
+```
+```{r}
+ggplot(elections, aes(x=winner_20)) + geom_bar()
+
+ggplot(elections, aes(x=repub_pct_20)) + geom_histogram(fill="red")
+```
+
+```{r}
+# YOU TRY: Modify the code to make the points "orange"
+# NOTE: Try to anticipate if "color" or "fill" will be useful here. Then try both.
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_point(color="orange")
+```
+
+```{r}
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) + geom_text(aes(label = state_abbr))
+```
+There is a strong positive correlation between whether a county supported Republicans in 2016 and whether they did the same in 2020. This means that counties who supported Republicans in 2016 were very likely to support them in 2020. Outliers include some counties in Texas and Utah, which supported republicans in higher numbers in 2020.
+
+```{r}
+# Replaces points with model line
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_smooth()
+```
+```{r}
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_point() +
+  geom_smooth(method = "lm") #Adds best fit line
+```
+```{r}
+# Scatterplot of repub_pct_20 vs median_rent
+ggplot(elections, aes(y = repub_pct_20, x = median_rent)) +
+  geom_point(color = "green")
+
+# Scatterplot of repub_pct_20 vs median_age
+ggplot(elections, aes(y = repub_pct_20, x = median_age)) +
+  geom_point(color = "purple")
+```
+Median_rent is a better predictor because there is a stronger correlation between it and repub_pct_20, relative to median_age.
+
+```{r}
+ggplot(elections, aes(y = repub_pct_20, x = historical)) +
+  geom_point()
+```
+Scatterplots are ineffective at measuring categorical variables because the data points are prevented scatter across a linear scale.
+
+```{r}
+# Side-by-side violin plots
+ggplot(elections, aes(y = repub_pct_20, x = historical)) +
+  geom_violin()
+
+# Side-by-side boxplots (defined below)
+ggplot(elections, aes(y = repub_pct_20, x = historical)) +
+  geom_boxplot()
+```
+In 2020, the Republican candidate Trump lost support in historically red and purple counties. His level of support in blue counties aligned with historical precedent.
+
+```{r}
+# Color scheme of plot does not match "historical" category names. Sections are clumped together oddly.
+#
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density()
+```
+
+```{r}
+# What does scale_fill_manual do? -- Manually creates scale of fill values relative to fill variable.
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density() +
+  scale_fill_manual(values = c("blue", "purple", "red"))
+```
+```{r}
+# What does alpha = 0.5 do? -- Adds transparency to the graph
+# Play around with different values of alpha, between 0 and 1
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density(alpha = 0.5) +
+  scale_fill_manual(values = c("blue", "purple", "red"))
+```
+```{r}
+# What does facet_wrap do?! -- Splits categories into separate graphs.
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density() +
+  scale_fill_manual(values = c("blue", "purple", "red")) +
+  facet_wrap(~ historical)
+
+# Let's try a similar grouping strategy with a histogram instead of density plot.
+# Why is this terrible? -- Very difficult to understand count of each category in "historical".
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_histogram(color = "white") +
+  scale_fill_manual(values = c("blue", "purple", "red"))
+```
+I prefer box plots because they make it easy to see the median and outliers of a data set.
+Density plots are *better* than box plots at showing the concentration of data at certain points.
+Density plots are *worse* than box plots at showing outliers.
+
+```{r}
+# Plot 1: adjust this to recreate the top plot
+ggplot(elections, aes(x = historical, fill = winner_20)) +
+  geom_bar()
+```
+```{r}
+# Plot 2: adjust this to recreate the bottom plot
+ggplot(elections, aes(x = winner_20)) +
+  geom_bar() +
+  facet_wrap(~ historical)
+```
+
+```{r}
+# A stacked bar plot
+# How are the "historical" and "winner_20" variables mapped to the plot, i.e. what roles do they play?
+# Historical data divided by how counties voted in 2020
+ggplot(elections, aes(x = historical, fill = winner_20)) +
+  geom_bar()
+```
+```{r}
+# A faceted bar plot
+ggplot(elections, aes(x = winner_20)) +
+  geom_bar() +
+  facet_wrap(~ historical)
+# A side-by-side bar plot
+# Note the new argument to geom_bar
+ggplot(elections, aes(x = historical, fill = winner_20)) +
+  geom_bar(position = "dodge")
+# A proportional bar plot
+# Note the new argument to geom_bar
+ggplot(elections, aes(x = historical, fill = winner_20)) +
+  geom_bar(position = "fill")
+```
+Pro of proportional -- makes relative proportions of winner_20 easy to understand
+Con of proportional -- cannot see relative size of each historical category
+The side-by-side bar plot is my favorite because it is easy to understand both the size of each historical category and the distribution winner_20 categories per historical category.
+
+```{r}
+weather <- read.csv("https://mac-stat.github.io/data/weather_3_locations.csv")
+# How do 3pm temperatures (temp3pm) differ by location?
+ggplot(weather, aes(x=location, y=temp3pm))+
+  geom_boxplot()
+# How might we predict the 3pm temperature (temp3pm) by the 9am temperature (temp9am)?
+ggplot(weather, aes(y = temp3pm, x = temp9am)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+# How do the number of rainy days (raintoday) differ by location?
+ggplot(weather, aes(x=location))+
+  geom_bar() +
+  facet_wrap (~ raintoday)
+```
+
