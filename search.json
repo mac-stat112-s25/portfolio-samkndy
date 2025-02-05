@@ -113,7 +113,51 @@
     "href": "ica/ica-multi.html",
     "title": "8  Mulivariate Viz",
     "section": "",
-    "text": "Use this file for practice with the mulivariate viz in-class activity. Refer to the class website for details.",
+    "text": "8.1 Exercise 1\n# Exercise 1\nggplot(education, aes(x=sat)) +\n  geom_histogram(color=\"white\")\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\nThe SAT score averages in this plot range from ~840 to ~1110. The distribution of this data has a left skew.",
+    "crumbs": [
+      "In-class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Mulivariate Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/ica-multi.html#exercise-2",
+    "href": "ica/ica-multi.html#exercise-2",
+    "title": "8  Mulivariate Viz",
+    "section": "8.2 Exercise 2",
+    "text": "8.2 Exercise 2\n\n# Exercise 2\n# Construct a plot of sat vs expend\n# Include a \"best fit linear regression model\" (HINT: method = \"lm\")\nggplot(education, aes(y=sat, x=expend)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n# Construct a plot of sat vs salary\n# Include a \"best fit linear regression model\" (HINT: method = \"lm\")\nggplot(education, aes(y=sat, x=salary)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nSurprisingly, there appears to be a negative correlation between a state’s average SAT score and its average expenditure per student or average teacher salary.",
+    "crumbs": [
+      "In-class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Mulivariate Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/ica-multi.html#exercise-3",
+    "href": "ica/ica-multi.html#exercise-3",
+    "title": "8  Mulivariate Viz",
+    "section": "8.3 Exercise 3",
+    "text": "8.3 Exercise 3\n\n# Exercise 3\nggplot(education, aes(y=sat, x=salary, color=expend)) +\n  geom_point() +\n  geom_smooth(method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: The following aesthetics were dropped during statistical transformation:\ncolour.\nℹ This can happen when ggplot fails to infer the correct grouping structure in\n  the data.\nℹ Did you forget to specify a `group` aesthetic or to convert a numerical\n  variable into a factor?",
+    "crumbs": [
+      "In-class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Mulivariate Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/ica-multi.html#exercise-4",
+    "href": "ica/ica-multi.html#exercise-4",
+    "title": "8  Mulivariate Viz",
+    "section": "8.4 Exercise 4",
+    "text": "8.4 Exercise 4\n\n# Exercise 4\nggplot(education, aes(y = sat, x = salary, color = cut(expend, 2))) + \n  geom_point() + \n  geom_smooth(se = FALSE, method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nAs the average teacher salary and average expenditure per student in a state increases, the state’s average SAT score decreases.",
+    "crumbs": [
+      "In-class Activities",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Mulivariate Viz</span>"
+    ]
+  },
+  {
+    "objectID": "ica/ica-multi.html#exercise-5",
+    "href": "ica/ica-multi.html#exercise-5",
+    "title": "8  Mulivariate Viz",
+    "section": "8.5 Exercise 5",
+    "text": "8.5 Exercise 5\n\n# 5a: Univariate visualization of fracCat\nggplot(education, aes(x=fracCat)) +\n  geom_bar(color=\"white\") +\n  labs(y = \"Number of U.S. states\")\n\n\n\n\n\n\n\n\n\n# 5b: 2 bivariate visualizations that demonstrate the relationship between sat and fracCat\nggplot(education, aes(y=sat, x=fracCat)) +\n  geom_boxplot()\n\n\n\n\n\n\n\nggplot(education, aes(x=sat, fill=fracCat)) +\n  geom_density(alpha = 0.5)\n\n\n\n\n\n\n\n\nThis graph tells me that there is a negative correlation between how many students take the SAT and a state’s average SAT score.\n\n# 5c: Trivariate visualization that demonstrates the relationship of sat with expend AND fracCat\nggplot(education, aes(y = sat, x = expend, color = fracCat)) + \n  geom_point() + \n  geom_smooth(se = FALSE, method = \"lm\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nThis graph makes clear spending does not have a major impact on a state’s average SAT score. The primary determinant of a state’s average SAT score is actually the fraction of eligible students who take the exam.\nIt appeared that SAT scores decreased as spending increased because I was excluding important information from my early visualizations of this data. Only by considering more variables was I able to understand the actual trends occurring in the data.",
     "crumbs": [
       "In-class Activities",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Mulivariate Viz</span>"
