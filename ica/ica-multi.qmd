@@ -2,4 +2,82 @@
 title: "Mulivariate Viz"
 ---
 
-Use this file for practice with the **mulivariate viz** in-class activity.  Refer to the class website for details.
+```{r}
+library(tidyverse)
+
+# Import and check out data
+education <- read.csv("https://mac-stat.github.io/data/sat.csv")
+head(education)
+
+```
+
+## Exercise 1
+```{r}
+# Exercise 1
+ggplot(education, aes(x=sat)) +
+  geom_histogram(color="white")
+
+```
+The SAT score averages in this plot range from ~840 to ~1110. The distribution of this data has a left skew.
+
+## Exercise 2
+```{r}
+# Exercise 2
+# Construct a plot of sat vs expend
+# Include a "best fit linear regression model" (HINT: method = "lm")
+ggplot(education, aes(y=sat, x=expend)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+# Construct a plot of sat vs salary
+# Include a "best fit linear regression model" (HINT: method = "lm")
+ggplot(education, aes(y=sat, x=salary)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+```
+Surprisingly, there appears to be a negative correlation between a state's average SAT score and its average expenditure per student or average teacher salary.
+
+## Exercise 3
+```{r}
+# Exercise 3
+ggplot(education, aes(y=sat, x=salary, color=expend)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+## Exercise 4
+```{r}
+# Exercise 4
+ggplot(education, aes(y = sat, x = salary, color = cut(expend, 2))) + 
+  geom_point() + 
+  geom_smooth(se = FALSE, method = "lm")
+```
+As the average teacher salary and average expenditure per student in a state increases, the state's average SAT score decreases.
+
+## Exercise 5
+```{r}
+# 5a: Univariate visualization of fracCat
+ggplot(education, aes(x=fracCat)) +
+  geom_bar(color="white") +
+  labs(y = "Number of U.S. states")
+```
+```{r}
+# 5b: 2 bivariate visualizations that demonstrate the relationship between sat and fracCat
+ggplot(education, aes(y=sat, x=fracCat)) +
+  geom_boxplot()
+
+ggplot(education, aes(x=sat, fill=fracCat)) +
+  geom_density(alpha = 0.5)
+```
+This graph tells me that there is a negative correlation between how many students take the SAT and a state's average SAT score.
+
+```{r}
+# 5c: Trivariate visualization that demonstrates the relationship of sat with expend AND fracCat
+ggplot(education, aes(y = sat, x = expend, color = fracCat)) + 
+  geom_point() + 
+  geom_smooth(se = FALSE, method = "lm")
+```
+This graph makes clear spending does not have a major impact on a state's average SAT score. The primary determinant of a state's average SAT score is actually the fraction of eligible students who take the exam.
+
+It appeared that SAT scores decreased as spending increased because I was excluding important information from my early visualizations of this data. Only by considering more variables was I able to understand the actual trends occurring in the data.
