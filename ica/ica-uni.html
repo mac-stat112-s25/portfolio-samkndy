@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>6&nbsp; Univariate Viz – COMP/STAT112 Notebook</title>
 <style>
 code{white-space: pre-wrap;}
@@ -56,7 +53,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -75,8 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -102,18 +97,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../style/custom.css">
+}</script><link rel="stylesheet" href="../style/custom.css">
 </head>
-
 <body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -124,13 +113,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Sam Kennedy</a> 
         <div class="sidebar-tools-main">
@@ -150,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
@@ -164,8 +149,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../bw/bw-uni.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Univariate Viz</span></span></a>
@@ -196,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
@@ -205,8 +190,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-uni.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Univariate Viz</span></span></a>
@@ -237,20 +222,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises"><span class="header-section-number">6.1</span> Exercises</a>
+<li>
+<a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises"><span class="header-section-number">6.1</span> Exercises</a>
   <ul class="collapse">
-  <li><a href="#exercise-1-research-questions" id="toc-exercise-1-research-questions" class="nav-link" data-scroll-target="#exercise-1-research-questions">Exercise 1: Research Questions</a></li>
+<li><a href="#exercise-1-research-questions" id="toc-exercise-1-research-questions" class="nav-link" data-scroll-target="#exercise-1-research-questions">Exercise 1: Research Questions</a></li>
   <li><a href="#exercise-2-load-tidyverse" id="toc-exercise-2-load-tidyverse" class="nav-link" data-scroll-target="#exercise-2-load-tidyverse">Exercise 2: Load tidyverse</a></li>
   <li><a href="#exercise-3-bar-chart-of-ratings---part-1" id="toc-exercise-3-bar-chart-of-ratings---part-1" class="nav-link" data-scroll-target="#exercise-3-bar-chart-of-ratings---part-1">Exercise 3: Bar Chart of Ratings - Part 1</a></li>
   <li><a href="#exercise-4-bar-chart-of-ratings---part-2" id="toc-exercise-4-bar-chart-of-ratings---part-2" class="nav-link" data-scroll-target="#exercise-4-bar-chart-of-ratings---part-2">Exercise 4: Bar Chart of Ratings - Part 2</a></li>
@@ -264,10 +248,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise-12-density-plots-vs-histograms" id="toc-exercise-12-density-plots-vs-histograms" class="nav-link" data-scroll-target="#exercise-12-density-plots-vs-histograms">Exercise 12: Density Plots vs Histograms</a></li>
   <li><a href="#exercise-13-code-communication" id="toc-exercise-13-code-communication" class="nav-link" data-scroll-target="#exercise-13-code-communication">Exercise 13: Code = communication</a></li>
   <li><a href="#exercise-14-practice" id="toc-exercise-14-practice" class="nav-link" data-scroll-target="#exercise-14-practice">Exercise 14: Practice</a></li>
-  </ul></li>
-  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions"><span class="header-section-number">6.2</span> Solutions</a>
+  </ul>
+</li>
+  <li>
+<a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions"><span class="header-section-number">6.2</span> Solutions</a>
   <ul class="collapse">
-  <li><a href="#exercise-1-research-questions-1" id="toc-exercise-1-research-questions-1" class="nav-link" data-scroll-target="#exercise-1-research-questions-1">Exercise 1: Research Questions</a></li>
+<li><a href="#exercise-1-research-questions-1" id="toc-exercise-1-research-questions-1" class="nav-link" data-scroll-target="#exercise-1-research-questions-1">Exercise 1: Research Questions</a></li>
   <li><a href="#exercise-3-bar-chart-of-ratings---part-1-1" id="toc-exercise-3-bar-chart-of-ratings---part-1-1" class="nav-link" data-scroll-target="#exercise-3-bar-chart-of-ratings---part-1-1">Exercise 3: Bar Chart of Ratings - Part 1</a></li>
   <li><a href="#exercise-4-bar-chart-of-ratings---part-2-1" id="toc-exercise-4-bar-chart-of-ratings---part-2-1" class="nav-link" data-scroll-target="#exercise-4-bar-chart-of-ratings---part-2-1">Exercise 4: Bar Chart of Ratings - Part 2</a></li>
   <li><a href="#exercise-5-bar-chart-follow-up-1" id="toc-exercise-5-bar-chart-follow-up-1" class="nav-link" data-scroll-target="#exercise-5-bar-chart-follow-up-1">Exercise 5: Bar Chart Follow-up</a></li>
@@ -277,16 +263,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#exercise-10-histogram-follow-up-1" id="toc-exercise-10-histogram-follow-up-1" class="nav-link" data-scroll-target="#exercise-10-histogram-follow-up-1">Exercise 10: Histogram Follow-up</a></li>
   <li><a href="#exercise-11-density-plots-1" id="toc-exercise-11-density-plots-1" class="nav-link" data-scroll-target="#exercise-11-density-plots-1">Exercise 11: Density plots</a></li>
   <li><a href="#exercise-13-code-communication-1" id="toc-exercise-13-code-communication-1" class="nav-link" data-scroll-target="#exercise-13-code-communication-1">Exercise 13: Code = Communication</a></li>
-  </ul></li>
   </ul>
-</nav>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/ica-uni.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-uni.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Univariate Viz</span></a></li></ol></nav>
-<div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Univariate Viz</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/ica-uni.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-uni.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Univariate Viz</span></a></li></ol></nav><div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">
+<span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Univariate Viz</span>
+</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -300,18 +285,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header>
-
-
-<p>Use this file for practice with the <strong>univariate viz</strong> in-class activity. Refer to the class website for details.</p>
-<section id="exercises" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="exercises"><span class="header-section-number">6.1</span> Exercises</h2>
+</header><p>Use this file for practice with the <strong>univariate viz</strong> in-class activity. Refer to the class website for details.</p>
+<section id="exercises" class="level2" data-number="6.1"><h2 data-number="6.1" class="anchored" data-anchor-id="exercises">
+<span class="header-section-number">6.1</span> Exercises</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Import data</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a>hikes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/high_peaks.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="exercise-1-research-questions" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-1-research-questions">Exercise 1: Research Questions</h3>
+<section id="exercise-1-research-questions" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-1-research-questions">Exercise 1: Research Questions</h3>
 <p>Let’s dig into the <code>hikes</code> data, starting with the <code>elevation</code> and difficulty <code>ratings</code> of the hikes:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">head</span>(hikes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -328,10 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="a">
 <li>What features would we like a visualization of the <em>categorical</em> difficulty <code>rating</code> variable to capture? How many hikes fall into each category.</li>
 <li>What about a visualization of the <em>quantitative</em> <code>elevation</code> variable? Order of peaks by elevation.</li>
-</ol>
-</section>
-<section id="exercise-2-load-tidyverse" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-2-load-tidyverse">Exercise 2: Load tidyverse</h3>
+</ol></section><section id="exercise-2-load-tidyverse" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-2-load-tidyverse">Exercise 2: Load tidyverse</h3>
 <p>We’ll address the above questions using <code>ggplot</code> tools. Try running the following chunk and simply take note of the error message – this is one you’ll get a lot!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Use the ggplot function</span></span>
@@ -342,9 +320,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Load the package</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="exercise-3-bar-chart-of-ratings---part-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-3-bar-chart-of-ratings---part-1">Exercise 3: Bar Chart of Ratings - Part 1</h3>
+</section><section id="exercise-3-bar-chart-of-ratings---part-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-3-bar-chart-of-ratings---part-1">Exercise 3: Bar Chart of Ratings - Part 1</h3>
 <p>Consider some specific research questions about the difficulty <code>rating</code> of the hikes:</p>
 <ol type="1">
 <li>How many hikes fall into each category?</li>
@@ -355,8 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -367,10 +342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>What, in general, is the first argument of the <code>ggplot()</code> function? Data type of individual cases being visualized.</li>
 <li>What is the purpose of writing <code>x = rating</code>? Returns difficulty rating for each case.</li>
 <li>What do you think <code>aes</code> stands for?!? Aesthetic</li>
-</ul>
-</section>
-<section id="exercise-4-bar-chart-of-ratings---part-2" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-4-bar-chart-of-ratings---part-2">Exercise 4: Bar Chart of Ratings - Part 2</h3>
+</ul></section><section id="exercise-4-bar-chart-of-ratings---part-2" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-4-bar-chart-of-ratings---part-2">Exercise 4: Bar Chart of Ratings - Part 2</h3>
 <p>Now let’s add a <strong>geometric layer</strong> to the frame / canvas, and start customizing the plot’s <strong>theme</strong>. To this end, try each chunk below, <em>one by one</em>. In each chunk, make a comment about how both the code and the corresponding plot both changed.</p>
 <p>NOTE:</p>
 <ul>
@@ -383,8 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -396,8 +367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-4"><a href="#cb8-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -409,8 +379,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -422,8 +391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -436,41 +404,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-5-bar-chart-follow-up" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-5-bar-chart-follow-up">Exercise 5: Bar Chart Follow-up</h3>
-<section id="part-a" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="part-a">Part a</h4>
+</section><section id="exercise-5-bar-chart-follow-up" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-5-bar-chart-follow-up">Exercise 5: Bar Chart Follow-up</h3>
+<section id="part-a" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a">Part a</h4>
 <p>Reflect on the <code>ggplot()</code> code.</p>
 <ul>
 <li>What’s the purpose of the <code>+</code>? When do we use it? The ‘+’ operator combines lines of code. We use it to execute multiple lines simultaneously.</li>
 <li>We added the bars using <code>geom_bar()</code>? Why “geom”? “Geom” stands for geometry. ‘Geom_bar()’ generates bar shapes.</li>
 <li>What does <code>labs()</code> stand for? Labels</li>
 <li>What’s the difference between <code>color</code> and <code>fill</code>? ‘Color’ determines a shape’s outline color. ‘Fill’ determines a shape’s fill color.</li>
-</ul>
-</section>
-<section id="part-b" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="part-b">Part b</h4>
+</ul></section><section id="part-b" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-b">Part b</h4>
 <p>In general, bar charts allow us to examine the following properties of a <em>categorical</em> variable:</p>
 <ul>
-<li><strong>observed categories</strong>: What categories did we observe? Difficulty rating, number of hikes per difficulty.</li>
-<li><strong>variability between categories</strong>: Are observations evenly spread out among the categories, or are some categories more common than others? The majority of hikes are ‘moderate’ difficulty.</li>
+<li>
+<strong>observed categories</strong>: What categories did we observe? Difficulty rating, number of hikes per difficulty.</li>
+<li>
+<strong>variability between categories</strong>: Are observations evenly spread out among the categories, or are some categories more common than others? The majority of hikes are ‘moderate’ difficulty.</li>
 </ul>
 <p>We must then <em>translate</em> this information into the <em>context</em> of our analysis, here hikes in the Adirondacks. Summarize below what you learned from the bar chart, in context. Out of the forty-six hikes included in this data set, most (27) were of a moderate difficulty. Some (11) were of an easy difficulty, and even less (8) were of a hard difficulty.</p>
-</section>
-<section id="part-c" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="part-c">Part c</h4>
+</section><section id="part-c" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-c">Part c</h4>
 <p>Is there anything you don’t like about this barplot? For example: check out the x-axis again. I would prefer if the x-axis was ordered ‘easy - moderate - hard’ instead of ‘easy - hard - moderate’.</p>
-</section>
-</section>
-<section id="exercise-6-sad-bar-chart" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-6-sad-bar-chart">Exercise 6: Sad Bar Chart</h3>
+</section></section><section id="exercise-6-sad-bar-chart" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-6-sad-bar-chart">Exercise 6: Sad Bar Chart</h3>
 <p>Let’s now consider some research questions related to the <em>quantitative</em> <code>elevation</code> variable:</p>
 <ol type="1">
 <li>Among the hikes, what’s the <em>range</em> of elevation and how are the hikes <em>distributed</em> within this range (e.g.&nbsp;evenly, in clumps, “normally”)? Range: 3820ft - 5344ft Relatively normal distribution.</li>
@@ -486,21 +444,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>This is not an effective visualization because it does not illustrate the distribution of elevation values. It simply tells us that most hikes have unique elevations, which is not interesting or relevant.</p>
-</section>
-<section id="exercise-7-a-histogram-of-elevation" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-7-a-histogram-of-elevation">Exercise 7: A Histogram of Elevation</h3>
+</section><section id="exercise-7-a-histogram-of-elevation" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-7-a-histogram-of-elevation">Exercise 7: A Histogram of Elevation</h3>
 <p>Quantitative variables require different viz than categorical variables. Especially when there are many possible outcomes of the quantitative variable. It’s typically insufficient to simply count up the number of times we’ve observed a particular outcome as the bar graph did above. It gives us a sense of ranges and typical outcomes, but not a good sense of how the observations are distributed across this range. We’ll explore two methods for graphing quantitative variables: <strong>histograms</strong> and <strong>density plots</strong>.</p>
 <p><strong>Histograms</strong> are constructed by (1) dividing up the observed range of the variable into ‘bins’ of equal width; and (2) counting up the number of cases that fall into each bin. Check out the example below:</p>
 <p><img src="https://mac-stat.github.io/images/112/histogram_demo.png" class="img-fluid" style="width:50.0%"></p>
-<section id="part-a-1" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="part-a-1">Part a</h4>
+<section id="part-a-1" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a-1">Part a</h4>
 <p>Let’s dig into some details.</p>
 <ul>
 <li>How many hikes have an elevation between 4500 and 4700 feet? Six hikes.</li>
@@ -508,15 +462,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Now the bigger picture. In general, histograms allow us to examine the following properties of a <em>quantitative</em> variable:</p>
 <ul>
-<li><strong>typical outcome:</strong> Where’s the center of the data points? What’s typical? A typical outcome lies between 4000 and 4700 ft. 4350ft is the roughly the center.</li>
-<li><strong>variability &amp; range:</strong> How spread out are the outcomes? What are the max and min outcomes? The outcomes are spread normally. The min outcome is 3820ft and the max outcome is 5344 ft.</li>
-<li><strong>shape:</strong> How are values distributed along the observed range? Is the distribution symmetric, right-skewed, left-skewed, bi-modal, or uniform (flat)? The distribution is right-skewed.</li>
-<li><strong>outliers:</strong> Are there any outliers, i.e.&nbsp;outcomes that are unusually large/small? There are two outliers at the highest elevation value. We must then <em>translate</em> this information into the <em>context</em> of our analysis, here hikes in the Adirondacks. Addressing each of the features in the above list, summarize below what you learned from the histogram, in context. According to this sample, the vast majority of hikes in the Adirondacks have an elevation between 4000 and 4700 ft.</li>
-</ul>
-</section>
-</section>
-<section id="exercise-8-building-histograms---part-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-8-building-histograms---part-1">Exercise 8: Building Histograms - Part 1</h3>
+<li>
+<strong>typical outcome:</strong> Where’s the center of the data points? What’s typical? A typical outcome lies between 4000 and 4700 ft. 4350ft is the roughly the center.</li>
+<li>
+<strong>variability &amp; range:</strong> How spread out are the outcomes? What are the max and min outcomes? The outcomes are spread normally. The min outcome is 3820ft and the max outcome is 5344 ft.</li>
+<li>
+<strong>shape:</strong> How are values distributed along the observed range? Is the distribution symmetric, right-skewed, left-skewed, bi-modal, or uniform (flat)? The distribution is right-skewed.</li>
+<li>
+<strong>outliers:</strong> Are there any outliers, i.e.&nbsp;outcomes that are unusually large/small? There are two outliers at the highest elevation value. We must then <em>translate</em> this information into the <em>context</em> of our analysis, here hikes in the Adirondacks. Addressing each of the features in the above list, summarize below what you learned from the histogram, in context. According to this sample, the vast majority of hikes in the Adirondacks have an elevation between 4000 and 4700 ft.</li>
+</ul></section></section><section id="exercise-8-building-histograms---part-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-8-building-histograms---part-1">Exercise 8: Building Histograms - Part 1</h3>
 <p>2-MINUTE CHALLENGE: Thinking of the bar chart code, try to <em>intuit</em> what line you can tack on to the below frame of <code>elevation</code> to add a histogram layer. Don’t forget a <code>+</code>. If it doesn’t come to you within 2 minutes, <em>no problem</em> – all will be revealed in the next exercise.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
@@ -526,15 +480,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-9-building-histograms---part-2" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-9-building-histograms---part-2">Exercise 9: Building Histograms - Part 2</h3>
+</section><section id="exercise-9-building-histograms---part-2" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-9-building-histograms---part-2">Exercise 9: Building Histograms - Part 2</h3>
 <p>Let’s build some histograms. Try each chunk below, <em>one by one</em>. In each chunk, make a comment about how both the code and the corresponding plot both changed.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Generates a histogram measuring elevation on the x-axis and number of hikes in each elevation bin on the y-axis.</span></span>
@@ -545,8 +496,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -560,8 +510,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -575,8 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -591,8 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -604,8 +551,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-4"><a href="#cb23-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -617,8 +563,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -630,15 +575,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb25-4"><a href="#cb25-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-10-histogram-follow-up" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-10-histogram-follow-up">Exercise 10: Histogram Follow-up</h3>
+</section><section id="exercise-10-histogram-follow-up" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-10-histogram-follow-up">Exercise 10: Histogram Follow-up</h3>
 <ul>
 <li>What function added the histogram layer / geometry? The geo_histogram() function added the histogram layer.</li>
 <li>What’s the difference between <code>color</code> and <code>fill</code>? ‘Color’ changes the outline color. ‘Fill’ changes the fill color.</li>
@@ -646,10 +588,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>What did <code>binwidth</code> do? ‘Binwidth’ changes the range of values represented by each bin.</li>
 <li>Why does the histogram become ineffective if the <code>binwidth</code> is too big (e.g.&nbsp;1000 feet)? We lose too much information about the elevation of each hike.</li>
 <li>Why does the histogram become ineffective if the <code>binwidth</code> is too small (e.g.&nbsp;5 feet)? The hikes are separated too much, making it harder to see any trend between elevation values.</li>
-</ul>
-</section>
-<section id="exercise-11-density-plots" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-11-density-plots">Exercise 11: Density Plots</h3>
+</ul></section><section id="exercise-11-density-plots" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-11-density-plots">Exercise 11: Density Plots</h3>
 <p><strong>Density plots</strong> are essentially smooth versions of the histogram. Instead of sorting observations into discrete bins, the “density” of observations is calculated across the entire range of outcomes. The greater the number of observations, the greater the density! The density is then scaled so that the area under the density curve <strong>always equals 1</strong> and the area under any fraction of the curve represents the fraction of cases that lie in that range.</p>
 <p>Check out a density plot of elevation. Notice that the y-axis (density) has no contextual interpretation – it’s a relative measure. The <em>higher</em> the density, the more <em>common</em> are elevations in that range.</p>
 <div class="cell">
@@ -657,19 +596,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><strong>Questions</strong></p>
 <ul>
-<li><p>INTUITION CHECK: Before tweaking the code and thinking back to <code>geom_bar()</code> and <code>geom_histogram()</code>, how do you <em>anticipate</em> the following code will change the plot?</p>
+<li>
+<p>INTUITION CHECK: Before tweaking the code and thinking back to <code>geom_bar()</code> and <code>geom_histogram()</code>, how do you <em>anticipate</em> the following code will change the plot?</p>
 <ul>
 <li><code>geom_density(color = "blue")</code></li>
-<li><code>geom_density(fill = "orange")</code> The line will be blue and the area under it will be filled orange.</li>
-</ul></li>
+<li>
+<code>geom_density(fill = "orange")</code> The line will be blue and the area under it will be filled orange.</li>
+</ul>
+</li>
 <li><p>TRY IT! Test out those lines in the chunk below. Was your intuition correct? No, the ‘color’ parameter had no effect on the graph.</p></li>
 </ul>
 <div class="cell">
@@ -679,22 +620,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb27-4"><a href="#cb27-4"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"orange"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <ul>
 <li>Examine the density plot. How does it compare to the histogram? What does it tell you about the <em>typical</em> elevation, <em>variability / range</em> in elevations, and <em>shape</em> of the distribution of <em>elevations</em> within this range? The distribution of data is much smoother in the density plot. It makes clear that the typical elevation is ~4200ft, but that there is a some variability in elevations. The shape of the distribution is similar to that of the histogram.</li>
-</ul>
-</section>
-<section id="exercise-12-density-plots-vs-histograms" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-12-density-plots-vs-histograms">Exercise 12: Density Plots vs Histograms</h3>
+</ul></section><section id="exercise-12-density-plots-vs-histograms" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-12-density-plots-vs-histograms">Exercise 12: Density Plots vs Histograms</h3>
 <p>The histogram and density plot both allow us to visualize the behavior of a quantitative variable: typical outcome, variability / range, shape, and outliers. What are the pros/cons of each? What do you like/not like about each? The density plot makes it easy to visualize the general trend of data, while the histogram makes it easy to understand what a typical outcome is.</p>
-</section>
-<section id="exercise-13-code-communication" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-13-code-communication">Exercise 13: Code = communication</h3>
+</section><section id="exercise-13-code-communication" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-13-code-communication">Exercise 13: Code = communication</h3>
 <p>We <em>obviously</em> won’t be done until we talk about communication. All code above has a similar <em>general</em> structure (where the details can change):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">ggplot</span>(___, <span class="fu">aes</span>(<span class="at">x =</span> ___)) <span class="sc">+</span> </span>
@@ -711,8 +646,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb29-4"><a href="#cb29-4"></a><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -725,17 +659,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb30-2"><a href="#cb30-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">200</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-14-practice" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-14-practice">Exercise 14: Practice</h3>
-<section id="part-a-2" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="part-a-2">Part a</h4>
+</section><section id="exercise-14-practice" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-14-practice">Exercise 14: Practice</h3>
+<section id="part-a-2" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a-2">Part a</h4>
 <p>Practice your viz skills to learn about some of the variables in one of the following datasets from the previous class:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># Data on students in this class</span></span>
@@ -751,15 +681,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Nation"</span>, <span class="at">y =</span> <span class="st">"Number of victories"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="part-b-1" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="part-b-1">Part b</h4>
+</section><section id="part-b-1" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-b-1">Part b</h4>
 <p>Check out the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">RStudio Data Visualization cheat sheet</a> to learn more features of <code>ggplot</code>.</p>
 <div class="callout callout-style-default callout-warning callout-titled" title="Check → Commit → Push">
 <div class="callout-header d-flex align-content-center">
@@ -774,30 +701,20 @@ Check → Commit → Push
 <p>When done, don’t forgot to click <strong>Render Book</strong> and check the resulting HTML files. If happy, jump to GitHub Desktop and commit the changes with the message <strong>Finish activity 3</strong> and push to GitHub. Wait few seconds, then visit your portfolio website and make sure the changes are there.</p>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="solutions" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="solutions"><span class="header-section-number">6.2</span> Solutions</h2>
-<details>
-<summary>
+</section></section></section><section id="solutions" class="level2" data-number="6.2"><h2 data-number="6.2" class="anchored" data-anchor-id="solutions">
+<span class="header-section-number">6.2</span> Solutions</h2>
+<details><summary>
 Click for Solutions
-</summary>
-<section id="exercise-1-research-questions-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-1-research-questions-1">Exercise 1: Research Questions</h3>
+</summary><section id="exercise-1-research-questions-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-1-research-questions-1">Exercise 1: Research Questions</h3>
 <ol type="a">
 <li>For example: how many hikes are there in each category? are any categories more common than others?</li>
 <li>For example: What’s a typical elevation? What’s the range in elevations?</li>
-</ol>
-</section>
-<section id="exercise-3-bar-chart-of-ratings---part-1-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-3-bar-chart-of-ratings---part-1-1">Exercise 3: Bar Chart of Ratings - Part 1</h3>
+</ol></section><section id="exercise-3-bar-chart-of-ratings---part-1-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-3-bar-chart-of-ratings---part-1-1">Exercise 3: Bar Chart of Ratings - Part 1</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -806,19 +723,16 @@ Click for Solutions
 <li>just a blank canvas</li>
 <li>name of the dataset</li>
 <li>indicate which variable to plot on x-axis</li>
-<li><code>aes</code>thetics</li>
-</ul>
-</section>
-<section id="exercise-4-bar-chart-of-ratings---part-2-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-4-bar-chart-of-ratings---part-2-1">Exercise 4: Bar Chart of Ratings - Part 2</h3>
+<li>
+<code>aes</code>thetics</li>
+</ul></section><section id="exercise-4-bar-chart-of-ratings---part-2-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-4-bar-chart-of-ratings---part-2-1">Exercise 4: Bar Chart of Ratings - Part 2</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Add a bar plot LAYER</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating)) <span class="sc">+</span></span>
 <span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -828,8 +742,7 @@ Click for Solutions
 <span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-28-2.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-28-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -839,8 +752,7 @@ Click for Solutions
 <span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-28-3.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-28-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -850,8 +762,7 @@ Click for Solutions
 <span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-28-4.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-28-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -862,64 +773,43 @@ Click for Solutions
 <span id="cb38-5"><a href="#cb38-5"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-28-5.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-28-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-5-bar-chart-follow-up-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-5-bar-chart-follow-up-1">Exercise 5: Bar Chart Follow-up</h3>
-<section id="part-a-3" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="part-a-3">Part a</h4>
+</section><section id="exercise-5-bar-chart-follow-up-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-5-bar-chart-follow-up-1">Exercise 5: Bar Chart Follow-up</h3>
+<section id="part-a-3" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a-3">Part a</h4>
 <ul>
 <li>To indicate we’re still adding layers to / modifying our plot.</li>
 <li>Bars are the <code>geom</code>etric elements we’re adding in this layer.</li>
 <li>labels</li>
-<li><code>fill</code> fills in the bars. <code>color</code> outlines the bars.</li>
-</ul>
-</section>
-<section id="part-b-2" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="part-b-2">Part b</h4>
+<li>
+<code>fill</code> fills in the bars. <code>color</code> outlines the bars.</li>
+</ul></section><section id="part-b-2" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-b-2">Part b</h4>
 <p>Most hikes are moderate, the fewest number are difficult.</p>
-</section>
-<section id="part-c-1" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="part-c-1">Part c</h4>
+</section><section id="part-c-1" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-c-1">Part c</h4>
 <p>I don’t like that the categories are alphabetical, not in order of difficulty level.</p>
-</section>
-</section>
-<section id="exercise-6-sad-bar-chart-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-6-sad-bar-chart-1">Exercise 6: Sad Bar Chart</h3>
+</section></section><section id="exercise-6-sad-bar-chart-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-6-sad-bar-chart-1">Exercise 6: Sad Bar Chart</h3>
 <p>There are too many different outcomes of elevation.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span> </span>
 <span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-7-a-histogram-of-elevation-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-7-a-histogram-of-elevation-1">Exercise 7: A Histogram of Elevation</h3>
-<section id="part-a-4" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="part-a-4">Part a</h4>
+</section><section id="exercise-7-a-histogram-of-elevation-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-7-a-histogram-of-elevation-1">Exercise 7: A Histogram of Elevation</h3>
+<section id="part-a-4" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-a-4">Part a</h4>
 <ul>
 <li>6</li>
 <li>1 + 1 = 2</li>
-</ul>
-</section>
-<section id="part-b-3" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="part-b-3">Part b</h4>
+</ul></section><section id="part-b-3" class="level4 unnumbered"><h4 class="unnumbered anchored" data-anchor-id="part-b-3">Part b</h4>
 <p>Elevations range from roughly 3700 to 5500 feet. Elevations vary from hike to hike relatively <em>normally</em> (with a bell shape) around a typical elevation of roughly 4500 feet.</p>
-</section>
-</section>
-<section id="exercise-9-building-histograms---part-2-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-9-building-histograms---part-2-1">Exercise 9: Building Histograms - Part 2</h3>
+</section></section><section id="exercise-9-building-histograms---part-2-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-9-building-histograms---part-2-1">Exercise 9: Building Histograms - Part 2</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># Add a histogram layer</span></span>
 <span id="cb40-2"><a href="#cb40-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
@@ -929,8 +819,7 @@ Click for Solutions
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -942,8 +831,7 @@ Click for Solutions
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-30-2.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-30-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -955,8 +843,7 @@ Click for Solutions
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-30-3.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-30-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -969,8 +856,7 @@ Click for Solutions
 </div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-30-4.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-30-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -980,8 +866,7 @@ Click for Solutions
 <span id="cb48-4"><a href="#cb48-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-30-5.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-30-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -991,8 +876,7 @@ Click for Solutions
 <span id="cb49-4"><a href="#cb49-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-30-6.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-30-6.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1002,54 +886,40 @@ Click for Solutions
 <span id="cb50-4"><a href="#cb50-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-30-7.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-30-7.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-10-histogram-follow-up-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-10-histogram-follow-up-1">Exercise 10: Histogram Follow-up</h3>
+</section><section id="exercise-10-histogram-follow-up-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-10-histogram-follow-up-1">Exercise 10: Histogram Follow-up</h3>
 <ul>
 <li><code>geom_histogram()</code></li>
-<li><code>color</code> outlined the bars and <code>fill</code> filled them</li>
+<li>
+<code>color</code> outlined the bars and <code>fill</code> filled them</li>
 <li>easier to distinguish between the bars</li>
 <li>changed the bin width</li>
 <li>we lump too many hikes together and lose track of the nuances</li>
 <li>we don’t lump enough hikes together and lose track of the bigger picture trends</li>
-</ul>
-</section>
-<section id="exercise-11-density-plots-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-11-density-plots-1">Exercise 11: Density plots</h3>
+</ul></section><section id="exercise-11-density-plots-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-11-density-plots-1">Exercise 11: Density plots</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
 <span id="cb51-2"><a href="#cb51-2"></a> <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"orange"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="ica-uni_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-13-code-communication-1" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exercise-13-code-communication-1">Exercise 13: Code = Communication</h3>
+</section><section id="exercise-13-code-communication-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-13-code-communication-1">Exercise 13: Code = Communication</h3>
 <ul>
 <li>Clarifies that the subsequent lines are a continuation of the first. That is, we’re not done with the plot yet. These lines are all part of the same idea.</li>
 <li>This is like a run-on sentence. It’s tough to track the distinct steps that go into building the plot.</li>
-</ul>
-</section></details>
-
+</ul></section></details>
 
 <!-- -->
 
-</section>
-
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1668,9 +1538,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="../bw/bw-spatial.html" class="pagination-link" aria-label="Spatial Viz">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span>
       </a>          
@@ -2241,7 +2109,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-
 
 
 
