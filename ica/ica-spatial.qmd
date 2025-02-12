@@ -34,7 +34,7 @@ leaflet(data = fave_places) |>
   addMarkers(lng = ~longitude, lat = ~latitude)
 ```
 
-## Exercise 2
+# Exercise 2
 ```{r}
 # Load package needed to change color
 library(gplots)
@@ -303,3 +303,52 @@ ggplot(elections_by_state, aes(map_id = state_name, fill = repub_20_categories))
 ```
 
 We use geom_map() for choropleth maps.
+
+# Exercise 9
+```{r}
+# Get the latitude and longitude coordinates of county boundaries
+library(socviz)
+data(county_map) 
+
+# Check it out
+head(county_map)
+```
+
+```{r}
+# Add 0's at the beginning of any fips_code that's fewer than 5 numbers long
+# Don't worry about the syntax
+elections_by_counties <- elections_by_counties |> 
+  mutate(county_fips = as.character(county_fips)) |> 
+  mutate(county_fips = 
+           ifelse(nchar(county_fips) == 4, paste0("0", county_fips), county_fips))
+```
+
+```{r}
+ggplot(elections_by_counties, aes(map_id = county_fips, fill = repub_20_categories)) +
+  geom_map(map = county_map) +
+  scale_fill_manual(values = rev(brewer.pal(10, "RdBu")), name = "% Republican") +
+  expand_limits(x = county_map$long, y = county_map$lat) +
+  theme_map() +
+  theme(legend.position = "right") + 
+  coord_equal()
+```
+
+# Exercise 10
+```{r}
+ggplot(elections_by_counties, aes(map_id = county_fips, fill = median_rent)) +
+  geom_map(map = county_map) +
+  scale_fill_gradientn(name = "Median Rent", colors = c("white", "violet", "purple")) +
+  expand_limits(x = county_map$long, y = county_map$lat) +
+  theme_map() +
+  theme(legend.position = "right") + 
+  coord_equal()
+
+ggplot(elections_by_counties, aes(map_id = county_fips, fill = median_age)) +
+  geom_map(map = county_map) +
+  scale_fill_gradientn(name = "Median Age", colors = c("blue", "yellow", "red")) +
+  expand_limits(x = county_map$long, y = county_map$lat) +
+  theme_map() +
+  theme(legend.position = "right") + 
+  coord_equal()
+
+```
