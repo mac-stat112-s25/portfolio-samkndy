@@ -12,9 +12,9 @@
   {
     "objectID": "bw/bw-uni.html",
     "href": "bw/bw-uni.html",
-    "title": "1  Univariate Viz",
+    "title": "\n1  Univariate Viz\n",
     "section": "",
-    "text": "Use this file to generate a professional looking univariate visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.",
+    "text": "Use this file to generate a professional looking univariate visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.\n\nlibrary(tidyverse)\nlibrary(tidytuesdayR)\n\ntuesdata &lt;- tidytuesdayR::tt_load(2025, week = 3)\n\nexped_tidy &lt;- tuesdata$exped_tidy\npeaks_tidy &lt;- tuesdata$peaks_tidy\n\n\nggplot(exped_tidy, aes(x = SEASON_FACTOR)) +\n  geom_bar(color = \"black\", fill = \"lightblue\") +\n  labs(x = \"Season\", y = \"Number of attempted climbs\", title = \"Mt. Everest climb attempts by season\") +\n  theme_light()\n\n\n\nBar graph of Mount Everest climb attempts separated by season. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-01-21/readme.md",
     "crumbs": [
       "Best Work",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Univariate Viz</span>"
@@ -23,9 +23,9 @@
   {
     "objectID": "bw/bw-bi.html",
     "href": "bw/bw-bi.html",
-    "title": "2  Bivariate Viz",
+    "title": "\n2  Bivariate Viz\n",
     "section": "",
-    "text": "Use this file to generate a professional looking bivariate visualization. The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.",
+    "text": "Use this file to generate a professional looking bivariate visualization. The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.\n\nlibrary(tidyverse)\nlibrary(tidytuesdayR)\n\ntuesdata &lt;- tidytuesdayR::tt_load(2024, week = 33)\n\nworlds_fairs &lt;- tuesdata$worlds_fairs\n\n\nggplot(worlds_fairs, aes(y = area, x = start_year)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  labs(x = \"Start year of fair\", y = \"Area of fairgrounds (hectares)\", title = \"Areas of World's Fair Fairgrounds Over Time\") +\n  theme_light()\n\n\n\nScatter plot of World’s Fairs by year and fairgrounds area. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-08-13/readme.md",
     "crumbs": [
       "Best Work",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Bivariate Viz</span>"
@@ -34,9 +34,9 @@
   {
     "objectID": "bw/bw-tri.html",
     "href": "bw/bw-tri.html",
-    "title": "3  Trivariate Viz",
+    "title": "\n3  Trivariate Viz\n",
     "section": "",
-    "text": "Use this file to generate a professional looking trivariate visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.",
+    "text": "Use this file to generate a professional looking trivariate visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.\n\nlibrary(tidyverse)\nlibrary(tidytuesdayR)\n\ntuesdata &lt;- tidytuesdayR::tt_load(2024, week = 33)\n\nworlds_fairs &lt;- tuesdata$worlds_fairs\n\n\nggplot(worlds_fairs, aes(y = attending_countries, x = start_year)) +\n  geom_point(color = \"blue\") +\n  geom_smooth(method = \"lm\", color = \"red\") +\n  labs(x = \"Start year of fair\", y = \"Number of visiting countries\", title = \"Visting Countries at Different Types of World's Fairs\") +\n  facet_wrap(~category) +\n  theme_light()\n\n\n\nScatter plots of World’s Fairs by year and number of visiting countries, separated by expo type. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-08-13/readme.md",
     "crumbs": [
       "Best Work",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Trivariate Viz</span>"
