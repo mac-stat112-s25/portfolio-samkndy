@@ -3,3 +3,28 @@ title: "Univariate Viz"
 ---
 
 Use this file to generate a professional looking **univariate** visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+#| label: Initialize project
+#| warning: false
+library(tidyverse)
+library(tidytuesdayR)
+
+tuesdata <- tidytuesdayR::tt_load(2025, week = 3)
+
+exped_tidy <- tuesdata$exped_tidy
+peaks_tidy <- tuesdata$peaks_tidy
+
+```
+
+```{r}
+#| fig-cap: "Bar graph of Mount Everest climb attempts separated by season. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-01-21/readme.md"
+#| fig-alt: "A bar graph of Mount Everest climb attempts separated by season. The vast majority of climbs occur in autumn and spring."
+
+ggplot(exped_tidy, aes(x = SEASON_FACTOR)) +
+  geom_bar(color = "black", fill = "lightblue") +
+  labs(x = "Season", y = "Number of attempted climbs", title = "Mt. Everest climb attempts by season") +
+  theme_light()
+```
+
+

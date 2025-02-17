@@ -3,3 +3,30 @@ title: "Trivariate Viz"
 ---
 
 Use this file to generate a professional looking **trivariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+#| label: Initialize project
+#| warning: false
+library(tidyverse)
+library(tidytuesdayR)
+
+tuesdata <- tidytuesdayR::tt_load(2024, week = 33)
+
+worlds_fairs <- tuesdata$worlds_fairs
+
+```
+
+```{r}
+#| warning: false
+#| fig-cap: "Scatter plots of World's Fairs by year and number of visiting countries, separated by expo type. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-08-13/readme.md"
+#| fig-alt: "Two scatter plots of World's Fair data. The left one shows a strong positive correlation between the start year of a Specialized Expo and the number of visiting countries. The left one shows a strong positive correlation between the start year of a World Expo and the number of visiting countries."
+
+ggplot(worlds_fairs, aes(y = attending_countries, x = start_year)) +
+  geom_point(color = "blue") +
+  geom_smooth(method = "lm", color = "red") +
+  labs(x = "Start year of fair", y = "Number of visiting countries", title = "Visting Countries at Different Types of World's Fairs") +
+  facet_wrap(~category) +
+  theme_light()
+```
+
+

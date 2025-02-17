@@ -3,3 +3,28 @@ title: "Bivariate Viz"
 ---
 
 Use this file to generate a professional looking **bivariate** visualization.  The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+#| label: Initialize project
+#| warning: false
+library(tidyverse)
+library(tidytuesdayR)
+
+tuesdata <- tidytuesdayR::tt_load(2024, week = 33)
+
+worlds_fairs <- tuesdata$worlds_fairs
+
+```
+
+```{r}
+#| warning: false
+#| fig-cap: "Scatter plot of World's Fairs by year and fairgrounds area. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-08-13/readme.md"
+#| fig-alt: "A scatter plot of World's Fairs. A linear regression line shows a weak positive correlation between the year a fair took place and the area of its fairgrounds in hectares."
+
+ggplot(worlds_fairs, aes(y = area, x = start_year)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(x = "Start year of fair", y = "Area of fairgrounds (hectares)", title = "Areas of World's Fair Fairgrounds Over Time") +
+  theme_light()
+```
+
