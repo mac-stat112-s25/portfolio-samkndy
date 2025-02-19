@@ -3,3 +3,30 @@ title: "Quadvariate Viz"
 ---
 
 Use this file to generate a professional looking **quadvariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+#| label: Initialize project
+#| warning: false
+library(tidyverse)
+library(tidytuesdayR)
+library(viridisLite)
+
+tuesdata <- tidytuesdayR::tt_load(2025, week = 3)
+
+exped_tidy <- tuesdata$exped_tidy
+peaks_tidy <- tuesdata$peaks_tidy
+
+```
+
+```{r}
+#| fig-cap: "Four scatter plots of Himalayan mountain climbs, faceted by season. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-01-21/readme.md"
+#| fig-alt: "Four scatter plots of Himalayan mountain climbs. The x-axis measures the total number of days in an expedition. The y-axis measures the highest alititude reached during an expedition. The graphs are faceted by season, and the points are colored using a gradient fill to signify the number of camps during an expedition. The majority of climbs occur in autumn and spring, and use 0-6 camps. There appears to be no correlation between the number of days in an expedition and the highest point reached during an expedition."
+
+ggplot(exped_tidy, aes(y = HIGHPOINT, x = TOTDAYS, color = CAMPS)) +
+  geom_point() +
+  labs(x = "Total number of days in expedition", y = "Highest point reached during expedition", title = "Timing and success in Himalayan mountaineering expeditions") +
+  facet_wrap(~SEASON_FACTOR) +
+  scale_color_viridis_c("Number of camps") +
+  theme_light()
+```
+

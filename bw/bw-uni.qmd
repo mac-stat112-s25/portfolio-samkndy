@@ -18,12 +18,12 @@ peaks_tidy <- tuesdata$peaks_tidy
 ```
 
 ```{r}
-#| fig-cap: "Bar graph of Mount Everest climb attempts separated by season. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-01-21/readme.md"
-#| fig-alt: "A bar graph of Mount Everest climb attempts separated by season. The vast majority of climbs occur in autumn and spring."
+#| fig-cap: "Bar graph of Himalayan mountain climb attempts separated by season. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-01-21/readme.md"
+#| fig-alt: "A bar graph of Himalayan mountain climb attempts separated by season. The vast majority of climbs occur in autumn and spring."
 
 ggplot(exped_tidy, aes(x = SEASON_FACTOR)) +
   geom_bar(color = "black", fill = "lightblue") +
-  labs(x = "Season", y = "Number of attempted climbs", title = "Mt. Everest climb attempts by season") +
+  labs(x = "Season", y = "Number of attempted climbs", title = "Himalayan mountain climb attempts by season") +
   theme_light()
 ```
 
