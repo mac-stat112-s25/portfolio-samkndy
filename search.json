@@ -56,9 +56,9 @@
   {
     "objectID": "bw/bw-spatial.html",
     "href": "bw/bw-spatial.html",
-    "title": "5  Spatial Viz",
+    "title": "\n5  Spatial Viz\n",
     "section": "",
-    "text": "Use this file to generate a professional looking spatial visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.",
+    "text": "Use this file to generate a professional looking spatial visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.\n\nlibrary(tidyverse)\nlibrary(tidytuesdayR)\nlibrary(viridisLite)\nlibrary(leaflet)\nlibrary(gplots)\n\ntuesdata &lt;- tidytuesdayR::tt_load(2023, week = 25)\n\nufo_sightings &lt;- tuesdata$`ufo_sightings`\nplaces &lt;- tuesdata$`places`\nday_parts_map &lt;- tuesdata$`day_parts_map`\n\n\nlibrary(mosaic)\nlibrary(rnaturalearth)\nworld_boundaries &lt;- ne_countries(returnclass = \"sf\")\n\n\n#|fig-cap: \"Global distribution of UFO sightings reported to the National UFO Reporting Center. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-06-20/readme.md.\"\n#|fig-alt: \"A map showing the distribution of UFO sightings reported to the National UFO Reporting Center. The majority of reported sightings came from the United States, Western Europe, and Australia.\"\n\nggplot(world_boundaries) + \n  geom_sf() + \n  geom_point(\n    data = places,\n    aes(x = longitude, y = latitude),\n    alpha = 0.3, size = 0.2, color = \"darkred\"\n  ) +\n  labs(title = \"UFO sightings reported to the National UFO Reporting Center\") +\n  theme_map()",
     "crumbs": [
       "Best Work",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Spatial Viz</span>"
