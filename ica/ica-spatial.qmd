@@ -8,7 +8,7 @@ Use this file for practice with the **spatial viz** in-class activity.  Refer to
 ```{r}
 library(tidyverse)
 library(leaflet) # Load leaflet package
-```
+```data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAbElEQVR4Xs2RQQrAMAgEfZgf7W9LAguybljJpR3wEse5JOL3ZObDb4x1loDhHbBOFU6i2Ddnw2KNiXcdAXygJlwE8OFVBHDgKrLgSInN4WMe9iXiqIVsTMjH7z/GhNTEibOxQswcYIWYOR/zAjBJfiXh3jZ6AAAAAElFTkSuQmCC
 
 ```{r}
 fave_places <- read.csv("https://hash-mac.github.io/stat112site-s25/data/our_fave_places.csv")
