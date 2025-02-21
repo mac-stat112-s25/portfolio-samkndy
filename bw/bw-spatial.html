@@ -272,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-2"><a href="#cb3-2"></a><span class="co">#|fig-alt: "A map showing the distribution of UFO sightings reported to the National UFO Reporting Center. The majority of reported sightings came from the United States, Western Europe, and Australia."</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a></span>
 <span id="cb3-4"><a href="#cb3-4"></a><span class="fu">ggplot</span>(world_boundaries) <span class="sc">+</span> </span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>) <span class="sc">+</span> </span>
 <span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">geom_point</span>(</span>
 <span id="cb3-7"><a href="#cb3-7"></a>    <span class="at">data =</span> places,</span>
 <span id="cb3-8"><a href="#cb3-8"></a>    <span class="fu">aes</span>(<span class="at">x =</span> longitude, <span class="at">y =</span> latitude),</span>
@@ -958,7 +958,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-40"><a href="#cb4-40"></a><span class="co">#|fig-alt: "A map showing the distribution of UFO sightings reported to the National UFO Reporting Center. The majority of reported sightings came from the United States, Western Europe, and Australia."</span></span>
 <span id="cb4-41"><a href="#cb4-41"></a></span>
 <span id="cb4-42"><a href="#cb4-42"></a><span class="fu">ggplot</span>(world_boundaries) <span class="sc">+</span> </span>
-<span id="cb4-43"><a href="#cb4-43"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span> </span>
+<span id="cb4-43"><a href="#cb4-43"></a>  <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>) <span class="sc">+</span> </span>
 <span id="cb4-44"><a href="#cb4-44"></a>  <span class="fu">geom_point</span>(</span>
 <span id="cb4-45"><a href="#cb4-45"></a>    <span class="at">data =</span> places,</span>
 <span id="cb4-46"><a href="#cb4-46"></a>    <span class="fu">aes</span>(<span class="at">x =</span> longitude, <span class="at">y =</span> latitude),</span>
