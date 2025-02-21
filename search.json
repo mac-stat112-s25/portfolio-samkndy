@@ -45,9 +45,9 @@
   {
     "objectID": "bw/bw-quad.html",
     "href": "bw/bw-quad.html",
-    "title": "4  Quadvariate Viz",
+    "title": "\n4  Quadvariate Viz\n",
     "section": "",
-    "text": "Use this file to generate a professional looking quadvariate visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.",
+    "text": "Use this file to generate a professional looking quadvariate visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.\n\nlibrary(tidyverse)\nlibrary(tidytuesdayR)\nlibrary(viridisLite)\n\ntuesdata &lt;- tidytuesdayR::tt_load(2025, week = 3)\n\nexped_tidy &lt;- tuesdata$exped_tidy\npeaks_tidy &lt;- tuesdata$peaks_tidy\n\n\nggplot(exped_tidy, aes(y = HIGHPOINT, x = TOTDAYS, color = CAMPS)) +\n  geom_point() +\n  labs(x = \"Total number of days in expedition\", y = \"Highest point reached during expedition\", title = \"Timing and success in Himalayan mountaineering expeditions\") +\n  facet_wrap(~SEASON_FACTOR) +\n  scale_color_viridis_c(\"Number of camps\") +\n  theme_light()\n\n\n\nFour scatter plots of Himalayan mountain climbs, faceted by season. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-01-21/readme.md",
     "crumbs": [
       "Best Work",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Quadvariate Viz</span>"
