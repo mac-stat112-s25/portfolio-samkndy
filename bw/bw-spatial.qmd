@@ -34,7 +34,7 @@ world_boundaries <- ne_countries(returnclass = "sf")
 #|fig-alt: "A map showing the distribution of UFO sightings reported to the National UFO Reporting Center. The majority of reported sightings came from the United States, Western Europe, and Australia."
 
 ggplot(world_boundaries) + 
-  geom_sf() + 
+  geom_sf(fill = "lightblue") + 
   geom_point(
     data = places,
     aes(x = longitude, y = latitude),
