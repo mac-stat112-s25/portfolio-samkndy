@@ -268,8 +268,6 @@ nrow(elections)
 
 ## Exercises
 
-{{< include activity-instructions.qmd >}}
-
 ### Exercise 1: `select` Practice {-}
 
 

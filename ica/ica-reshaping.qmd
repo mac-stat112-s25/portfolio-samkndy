@@ -239,8 +239,6 @@ Wrangle this data so that the 3 restaurant columns are combined into 1, hence th
 
 ## Exercises
 
-{{< include activity-instructions.qmd >}}
-
 ### Exercise 1: What's the problem? {.unnumbered}
 
 Consider data on a sleep study in which subjects received only 3 hours of sleep per night.  Each day, their reaction time to a stimulus (in ms) was recorded.[^10-reshaping-data-1]

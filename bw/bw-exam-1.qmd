@@ -1,0 +1,94 @@
+---
+title: "Exam 1"
+format: html
+---
+
+# Grand question: What does the consumption of each food category in each country look like?
+
+```{r}
+#| label: Initialize project
+#| warning: false
+library(tidyverse)
+library(tidytuesdayR)
+```
+
+```{r}
+tuesdata <- tt_load('2020-02-18')
+fc <- tuesdata$food_consumption
+```
+
+## Exploring the data set
+
+```{r}
+head(fc) # First six rows in fc
+tail(fc) # Last six rows in fc
+nrow(fc) # Number of columns in fc
+ncol(fc) # Number of rows in fc
+```
+
+## Understanding variables individually
+
+3 variables involved in grand research question:
+"country", "food_category", and "consumption"
+
+```{r}
+#| fig_width: 15
+
+ggplot(fc, aes(x = country)) +
+  geom_bar(color = "white")
+```
+
+```{r}
+#| fig-width: 15
+
+ggplot(fc, aes(x = food_category)) +
+  geom_bar(color = "white")
+```
+
+```{r}
+ggplot(fc, aes(x = consumption)) +
+  geom_density(fill = "red", alpha = 0.5)
+```
+
+## Understanding consumption
+
+```{r}
+# Relationship between overall food consumption and food category
+#| fig-height: 22
+ggplot(fc, aes(x=consumption, y=food_category)) +
+  geom_boxplot()
+```
+
+```{r}
+# Relationship between overall food consumption and country
+#| fig-height: 30
+ggplot(fc, aes(x=consumption)) +
+  geom_histogram() +
+  facet_wrap(~country)
+```
+
+## Answering grand research question
+
+```{r}
+#| warning: false
+library(mosaic)
+library(rnaturalearth)
+library(viridisLite)
+world_boundaries <- ne_countries(returnclass = "sf")
+world_map <- map_data("world")
+```
+
+```{r}
+#| fig-height: 30
+#| fig-width: 50
+#|fig-cap: "Global food consumption separated by food category. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2020/2020-02-18/readme.md"
+#|fig-alt: "Eleven maps showing food consumption rates across the world faceted by food category. The vast majority of nations consume less than 100kg/person/year in food. The exception to this trend is milk, which is consumed at high rates in North America, South America, and Europe."
+
+ggplot(fc, aes(map_id = country, fill = consumption)) +
+  geom_map(map = world_map, color = "white") +
+  scale_fill_viridis_c("Food consumption (kg/person/year") +
+  expand_limits(x = world_map$long, y = world_map$lat) +
+  facet_wrap(~food_category) +
+  theme_map() 
+```
+The vast majority of nations consume less than 100kg/person/year in food. The exception to this trend is milk, which is consumed at high rates in North America, South America, and Europe. Additionally, rates of wheat consumption are higher in the northern hemisphere.

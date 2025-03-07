@@ -187,7 +187,6 @@ penguins |\> filter(species == "Chinstrap") |\> group_by(sex) |\> summarize(min 
 
 ## Exercises Part 1: Same Verbs, New Tricks
 
-{{< include activity-instructions.qmd >}}
 
 ### Exercise 1: More Filtering {.unnumbered}
 
