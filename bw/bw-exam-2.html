@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>5&nbsp; Spatial Viz – COMP/STAT112 Notebook</title>
+<title>8&nbsp; Food Consumption 2 – COMP/STAT112 Notebook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,8 +59,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../bw/bw-exam-1.html" rel="next">
-<link href="../bw/bw-quad.html" rel="prev">
+<link href="../bw/bw-wrangling-summary.html" rel="next">
+<link href="../bw/bw-viz-summary.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../bw/bw-uni.html">Best Work</a></li><li class="breadcrumb-item"><a href="../bw/bw-spatial.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Spatial Viz</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../bw/bw-uni.html">Best Work</a></li><li class="breadcrumb-item"><a href="../bw/bw-exam-2.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Food Consumption 2</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -176,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../bw/bw-spatial.html" class="sidebar-item-text sidebar-link active">
+  <a href="../bw/bw-spatial.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span></a>
   </div>
 </li>
@@ -194,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../bw/bw-exam-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../bw/bw-exam-2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Food Consumption 2</span></span></a>
   </div>
 </li>
@@ -293,13 +293,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#question-1-which-5-countries-consume-the-most-food" id="toc-question-1-which-5-countries-consume-the-most-food" class="nav-link active" data-scroll-target="#question-1-which-5-countries-consume-the-most-food"><span class="header-section-number">8.1</span> Question 1: Which 5 countries consume the most food?</a></li>
+  <li><a href="#question-2-which-5-countries-consume-the-most-of-each-food" id="toc-question-2-which-5-countries-consume-the-most-of-each-food" class="nav-link" data-scroll-target="#question-2-which-5-countries-consume-the-most-of-each-food"><span class="header-section-number">8.2</span> Question 2: Which 5 countries consume the most of each food?</a></li>
+  <li><a href="#question-3-what-does-the-consumption-of-each-food-look-like-across-the-world" id="toc-question-3-what-does-the-consumption-of-each-food-look-like-across-the-world" class="nav-link" data-scroll-target="#question-3-what-does-the-consumption-of-each-food-look-like-across-the-world"><span class="header-section-number">8.3</span> Question 3: What does the consumption of each food look like across the world?</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../bw/bw-uni.html">Best Work</a></li><li class="breadcrumb-item"><a href="../bw/bw-spatial.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Spatial Viz</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../bw/bw-uni.html">Best Work</a></li><li class="breadcrumb-item"><a href="../bw/bw-exam-2.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Food Consumption 2</span></a></li></ol></nav><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Spatial Viz</span>
+<span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Food Consumption 2</span>
 </h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
@@ -314,42 +320,208 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Use this file to generate a professional looking <strong>spatial</strong> visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.</p>
-<div class="cell">
+</header><div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidytuesdayR)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(viridisLite)</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(gplots)</span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="dv">2023</span>, <span class="at">week =</span> <span class="dv">25</span>)</span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a>ufo_sightings <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span><span class="st">`</span><span class="at">ufo_sightings</span><span class="st">`</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a>places <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span><span class="st">`</span><span class="at">places</span><span class="st">`</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a>day_parts_map <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span><span class="st">`</span><span class="at">day_parts_map</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidytuesdayR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(mosaic)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb2-3"><a href="#cb2-3"></a>world_boundaries <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>tuesdata <span class="ot">&lt;-</span> <span class="fu">tt_load</span>(<span class="st">'2020-02-18'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>---- Compiling #TidyTuesday Information for 2020-02-18 ----
+--- There is 1 file available ---
+
+
+── Downloading files ───────────────────────────────────────────────────────────
+
+  1 of 1: "food_consumption.csv"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>fc <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>food_consumption</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">#|fig-cap: "Global distribution of UFO sightings reported to the National UFO Reporting Center. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-06-20/readme.md."</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co">#|fig-alt: "A map showing the distribution of UFO sightings reported to the National UFO Reporting Center. The majority of reported sightings came from the United States, Western Europe, and Australia."</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">ggplot</span>(world_boundaries) <span class="sc">+</span> </span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>) <span class="sc">+</span> </span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb3-7"><a href="#cb3-7"></a>    <span class="at">data =</span> places,</span>
-<span id="cb3-8"><a href="#cb3-8"></a>    <span class="fu">aes</span>(<span class="at">x =</span> longitude, <span class="at">y =</span> latitude),</span>
-<span id="cb3-9"><a href="#cb3-9"></a>    <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">size =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"darkred"</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a>  ) <span class="sc">+</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"UFO sightings reported to the National UFO Reporting Center"</span>) <span class="sc">+</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a>  <span class="fu">theme_map</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>fcc <span class="ot">&lt;-</span> fc <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">mutate</span>(<span class="at">food_category =</span> <span class="fu">fct_recode</span>(food_category,</span>
+<span id="cb5-3"><a href="#cb5-3"></a>                                    <span class="st">"Lamb"</span><span class="ot">=</span> <span class="st">"Lamb &amp; Goat"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4"></a>                                    <span class="st">"Dairy"</span> <span class="ot">=</span> <span class="st">"Milk - inc. cheese"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5"></a>                                    <span class="st">"Wheat"</span> <span class="ot">=</span> <span class="st">"Wheat and Wheat Products"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6"></a>                                    <span class="st">"Nuts"</span> <span class="ot">=</span> <span class="st">"Nuts inc. Peanut Butter"</span>))</span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a>fcc <span class="sc">|&gt;</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a>  <span class="fu">distinct</span>(food_category)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 11 × 1
+   food_category
+   &lt;fct&gt;        
+ 1 Pork         
+ 2 Poultry      
+ 3 Beef         
+ 4 Lamb         
+ 5 Fish         
+ 6 Eggs         
+ 7 Dairy        
+ 8 Wheat        
+ 9 Rice         
+10 Soybeans     
+11 Nuts         </code></pre>
+</div>
+</div>
+<section id="question-1-which-5-countries-consume-the-most-food" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="question-1-which-5-countries-consume-the-most-food">
+<span class="header-section-number">8.1</span> Question 1: Which 5 countries consume the most food?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>fcc <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">summarise</span>(<span class="at">total_consumption =</span> <span class="fu">sum</span>(consumption)) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_consumption)) <span class="sc">|&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  country     total_consumption
+  &lt;chr&gt;                   &lt;dbl&gt;
+1 Finland                  640.
+2 Lithuania                555.
+3 Sweden                   550 
+4 Netherlands              534.
+5 Albania                  533.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>fcc <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">summarise</span>(<span class="at">total_consumption =</span> <span class="fu">sum</span>(consumption)) <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_consumption)) <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> total_consumption)) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>  <span class="fu">geom_col</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="bw-spatial_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figure class="figure"><p><img src="bw-exam-2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
+</div>
+</div>
+</div>
+</section><section id="question-2-which-5-countries-consume-the-most-of-each-food" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="question-2-which-5-countries-consume-the-most-of-each-food">
+<span class="header-section-number">8.2</span> Question 2: Which 5 countries consume the most of each food?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>fcc <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">select</span>(<span class="sc">-</span>co2_emmission) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">group_by</span>(food_category) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">order_by =</span> consumption)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 55 × 3
+# Groups:   food_category [11]
+   country   food_category consumption
+   &lt;chr&gt;     &lt;fct&gt;               &lt;dbl&gt;
+ 1 Argentina Beef                 55.5
+ 2 Brazil    Beef                 39.2
+ 3 USA       Beef                 36.2
+ 4 Australia Beef                 33.9
+ 5 Bermuda   Beef                 33.2
+ 6 Japan     Eggs                 19.2
+ 7 Paraguay  Eggs                 18.8
+ 8 China     Eggs                 18.8
+ 9 Mexico    Eggs                 18.3
+10 Ukraine   Eggs                 18.0
+# ℹ 45 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>fcc <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">select</span>(<span class="sc">-</span>co2_emmission) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">group_by</span>(food_category) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">order_by =</span> consumption) <span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> consumption)) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>food_category)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="bw-exam-2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="question-3-what-does-the-consumption-of-each-food-look-like-across-the-world" class="level2" data-number="8.3"><h2 data-number="8.3" class="anchored" data-anchor-id="question-3-what-does-the-consumption-of-each-food-look-like-across-the-world">
+<span class="header-section-number">8.3</span> Question 3: What does the consumption of each food look like across the world?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">library</span>(mosaic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Registered S3 method overwritten by 'mosaic':
+  method                           from   
+  fortify.SpatialPolygonsDataFrame ggplot2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+The 'mosaic' package masks several functions from core packages in order to add 
+additional features.  The original behavior of these functions should not be affected by this.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'mosaic'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:Matrix':
+
+    mean</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:dplyr':
+
+    count, do, tally</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
+
+    cross</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:ggplot2':
+
+    stat</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test,
+    quantile, sd, t.test, var</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    max, mean, min, prod, range, sample, sum</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">library</span>(viridisLite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>world_boundaries <span class="ot">=</span> <span class="fu">ne_countries</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb24-2"><a href="#cb24-2"></a></span>
+<span id="cb24-3"><a href="#cb24-3"></a>world_boundaries <span class="sc">|&gt;</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">select</span>(name, geometry) <span class="sc">|&gt;</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"United States of America"</span>, <span class="st">"USA"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"Bosnia and Herz."</span>, <span class="st">"Bosnia and Herzegovina"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"Czechia"</span>, <span class="st">"Czech Republic"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb24-8"><a href="#cb24-8"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"Taiwan"</span>, <span class="st">"Taiwan. ROC"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb24-9"><a href="#cb24-9"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb24-10"><a href="#cb24-10"></a>    fcc <span class="sc">|&gt;</span> </span>
+<span id="cb24-11"><a href="#cb24-11"></a>      <span class="fu">select</span>(<span class="sc">-</span>co2_emmission) <span class="sc">|&gt;</span></span>
+<span id="cb24-12"><a href="#cb24-12"></a>      <span class="fu">group_by</span>(food_category) <span class="sc">|&gt;</span></span>
+<span id="cb24-13"><a href="#cb24-13"></a>      <span class="fu">mutate</span>(<span class="at">consumption =</span> (consumption <span class="sc">-</span> <span class="fu">mean</span>(consumption))<span class="sc">/</span><span class="fu">sd</span>(consumption)),</span>
+<span id="cb24-14"><a href="#cb24-14"></a>    <span class="fu">join_by</span>(name <span class="sc">==</span> country)) <span class="sc">|&gt;</span></span>
+<span id="cb24-15"><a href="#cb24-15"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> food_category, <span class="at">values_from =</span> consumption) <span class="sc">|&gt;</span></span>
+<span id="cb24-16"><a href="#cb24-16"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="st">"NA"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb24-17"><a href="#cb24-17"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="sc">-</span>name, <span class="sc">-</span>geometry),</span>
+<span id="cb24-18"><a href="#cb24-18"></a>               <span class="at">names_to =</span> <span class="st">"food_category"</span>,</span>
+<span id="cb24-19"><a href="#cb24-19"></a>               <span class="at">values_to =</span> <span class="st">"consumption"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb24-20"><a href="#cb24-20"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb24-21"><a href="#cb24-21"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> consumption)) <span class="sc">+</span></span>
+<span id="cb24-22"><a href="#cb24-22"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>food_category) <span class="sc">+</span></span>
+<span id="cb24-23"><a href="#cb24-23"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="st">"Consumption level"</span>) <span class="sc">+</span></span>
+<span id="cb24-24"><a href="#cb24-24"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Food consumption across the world"</span>) <span class="sc">+</span></span>
+<span id="cb24-25"><a href="#cb24-25"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="bw-exam-2_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" alt="A graph showing eleven world maps. Each map is labelled with a different food group. The map is colored based on how much of each food group is consumed by citizens of a given country consume food from the corresponding food group." width="672"></p>
+<figcaption>A series of world maps. The color of each country is determined by the normalized rate at which it consumes a certain food group (kg/person/year). Each map depicts consumption rates for a different food group.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -357,8 +529,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <!-- -->
 
-
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -978,62 +1149,127 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../bw/bw-quad.html" class="pagination-link" aria-label="Quadvariate Viz">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Viz</span></span>
+      <a href="../bw/bw-viz-summary.html" class="pagination-link" aria-label="Data Visualization Unit Summary">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Visualization Unit Summary</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../bw/bw-exam-1.html" class="pagination-link" aria-label="Food Consumption">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Food Consumption</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../bw/bw-wrangling-summary.html" class="pagination-link" aria-label="Data Wrangling Unit Summary">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data Wrangling Unit Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="an">title:</span><span class="co"> "Spatial Viz"</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co">---</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a>Use this file to generate a professional looking **spatial** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.</span>
-<span id="cb4-6"><a href="#cb4-6"></a></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="in">```{r}</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#| label: Initialize project</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="co">#| warning: false</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="fu">library</span>(tidytuesdayR)</span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="fu">library</span>(viridisLite)</span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="fu">library</span>(gplots)</span>
-<span id="cb4-17"><a href="#cb4-17"></a></span>
-<span id="cb4-18"><a href="#cb4-18"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="dv">2023</span>, <span class="at">week =</span> <span class="dv">25</span>)</span>
-<span id="cb4-19"><a href="#cb4-19"></a></span>
-<span id="cb4-20"><a href="#cb4-20"></a>ufo_sightings <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span><span class="st">`</span><span class="at">ufo_sightings</span><span class="st">`</span></span>
-<span id="cb4-21"><a href="#cb4-21"></a>places <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span><span class="st">`</span><span class="at">places</span><span class="st">`</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a>day_parts_map <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span><span class="st">`</span><span class="at">day_parts_map</span><span class="st">`</span></span>
-<span id="cb4-23"><a href="#cb4-23"></a></span>
-<span id="cb4-24"><a href="#cb4-24"></a><span class="in">```</span></span>
-<span id="cb4-25"><a href="#cb4-25"></a></span>
-<span id="cb4-28"><a href="#cb4-28"></a><span class="in">```{r}</span></span>
-<span id="cb4-29"><a href="#cb4-29"></a><span class="co">#| warning: false</span></span>
-<span id="cb4-30"><a href="#cb4-30"></a><span class="fu">library</span>(mosaic)</span>
-<span id="cb4-31"><a href="#cb4-31"></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb4-32"><a href="#cb4-32"></a>world_boundaries <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
-<span id="cb4-33"><a href="#cb4-33"></a><span class="in">```</span></span>
-<span id="cb4-34"><a href="#cb4-34"></a></span>
-<span id="cb4-35"><a href="#cb4-35"></a></span>
-<span id="cb4-38"><a href="#cb4-38"></a><span class="in">```{r}</span></span>
-<span id="cb4-39"><a href="#cb4-39"></a><span class="co">#|fig-cap: "Global distribution of UFO sightings reported to the National UFO Reporting Center. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-06-20/readme.md."</span></span>
-<span id="cb4-40"><a href="#cb4-40"></a><span class="co">#|fig-alt: "A map showing the distribution of UFO sightings reported to the National UFO Reporting Center. The majority of reported sightings came from the United States, Western Europe, and Australia."</span></span>
-<span id="cb4-41"><a href="#cb4-41"></a></span>
-<span id="cb4-42"><a href="#cb4-42"></a><span class="fu">ggplot</span>(world_boundaries) <span class="sc">+</span> </span>
-<span id="cb4-43"><a href="#cb4-43"></a>  <span class="fu">geom_sf</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>) <span class="sc">+</span> </span>
-<span id="cb4-44"><a href="#cb4-44"></a>  <span class="fu">geom_point</span>(</span>
-<span id="cb4-45"><a href="#cb4-45"></a>    <span class="at">data =</span> places,</span>
-<span id="cb4-46"><a href="#cb4-46"></a>    <span class="fu">aes</span>(<span class="at">x =</span> longitude, <span class="at">y =</span> latitude),</span>
-<span id="cb4-47"><a href="#cb4-47"></a>    <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">size =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">"darkred"</span></span>
-<span id="cb4-48"><a href="#cb4-48"></a>  ) <span class="sc">+</span></span>
-<span id="cb4-49"><a href="#cb4-49"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"UFO sightings reported to the National UFO Reporting Center"</span>) <span class="sc">+</span></span>
-<span id="cb4-50"><a href="#cb4-50"></a>  <span class="fu">theme_map</span>()</span>
-<span id="cb4-51"><a href="#cb4-51"></a></span>
-<span id="cb4-52"><a href="#cb4-52"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb25" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1"></a><span class="co">---</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="an">title:</span><span class="co"> "Food Consumption 2"</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="co">---</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a></span>
+<span id="cb25-8"><a href="#cb25-8"></a><span class="in">```{r}</span></span>
+<span id="cb25-9"><a href="#cb25-9"></a><span class="co">#| label: Initialize project</span></span>
+<span id="cb25-10"><a href="#cb25-10"></a><span class="co">#| warning: false</span></span>
+<span id="cb25-11"><a href="#cb25-11"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb25-12"><a href="#cb25-12"></a><span class="fu">library</span>(tidytuesdayR)</span>
+<span id="cb25-13"><a href="#cb25-13"></a><span class="in">```</span></span>
+<span id="cb25-14"><a href="#cb25-14"></a></span>
+<span id="cb25-17"><a href="#cb25-17"></a><span class="in">```{r}</span></span>
+<span id="cb25-18"><a href="#cb25-18"></a>tuesdata <span class="ot">&lt;-</span> <span class="fu">tt_load</span>(<span class="st">'2020-02-18'</span>)</span>
+<span id="cb25-19"><a href="#cb25-19"></a>fc <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>food_consumption</span>
+<span id="cb25-20"><a href="#cb25-20"></a><span class="in">```</span></span>
+<span id="cb25-21"><a href="#cb25-21"></a></span>
+<span id="cb25-22"><a href="#cb25-22"></a></span>
+<span id="cb25-25"><a href="#cb25-25"></a><span class="in">```{r}</span></span>
+<span id="cb25-26"><a href="#cb25-26"></a>fcc <span class="ot">&lt;-</span> fc <span class="sc">|&gt;</span></span>
+<span id="cb25-27"><a href="#cb25-27"></a>  <span class="fu">mutate</span>(<span class="at">food_category =</span> <span class="fu">fct_recode</span>(food_category,</span>
+<span id="cb25-28"><a href="#cb25-28"></a>                                    <span class="st">"Lamb"</span><span class="ot">=</span> <span class="st">"Lamb &amp; Goat"</span>,</span>
+<span id="cb25-29"><a href="#cb25-29"></a>                                    <span class="st">"Dairy"</span> <span class="ot">=</span> <span class="st">"Milk - inc. cheese"</span>,</span>
+<span id="cb25-30"><a href="#cb25-30"></a>                                    <span class="st">"Wheat"</span> <span class="ot">=</span> <span class="st">"Wheat and Wheat Products"</span>,</span>
+<span id="cb25-31"><a href="#cb25-31"></a>                                    <span class="st">"Nuts"</span> <span class="ot">=</span> <span class="st">"Nuts inc. Peanut Butter"</span>))</span>
+<span id="cb25-32"><a href="#cb25-32"></a></span>
+<span id="cb25-33"><a href="#cb25-33"></a>fcc <span class="sc">|&gt;</span></span>
+<span id="cb25-34"><a href="#cb25-34"></a>  <span class="fu">distinct</span>(food_category)</span>
+<span id="cb25-35"><a href="#cb25-35"></a><span class="in">```</span></span>
+<span id="cb25-36"><a href="#cb25-36"></a></span>
+<span id="cb25-37"><a href="#cb25-37"></a></span>
+<span id="cb25-38"><a href="#cb25-38"></a><span class="fu">## Question 1: Which 5 countries consume the most food?</span></span>
+<span id="cb25-39"><a href="#cb25-39"></a></span>
+<span id="cb25-42"><a href="#cb25-42"></a><span class="in">```{r}</span></span>
+<span id="cb25-43"><a href="#cb25-43"></a>fcc <span class="sc">|&gt;</span></span>
+<span id="cb25-44"><a href="#cb25-44"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span></span>
+<span id="cb25-45"><a href="#cb25-45"></a>  <span class="fu">summarise</span>(<span class="at">total_consumption =</span> <span class="fu">sum</span>(consumption)) <span class="sc">|&gt;</span></span>
+<span id="cb25-46"><a href="#cb25-46"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_consumption)) <span class="sc">|&gt;</span></span>
+<span id="cb25-47"><a href="#cb25-47"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span>
+<span id="cb25-48"><a href="#cb25-48"></a><span class="in">```</span></span>
+<span id="cb25-51"><a href="#cb25-51"></a><span class="in">```{r}</span></span>
+<span id="cb25-52"><a href="#cb25-52"></a>fcc <span class="sc">|&gt;</span></span>
+<span id="cb25-53"><a href="#cb25-53"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span></span>
+<span id="cb25-54"><a href="#cb25-54"></a>  <span class="fu">summarise</span>(<span class="at">total_consumption =</span> <span class="fu">sum</span>(consumption)) <span class="sc">|&gt;</span></span>
+<span id="cb25-55"><a href="#cb25-55"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_consumption)) <span class="sc">|&gt;</span></span>
+<span id="cb25-56"><a href="#cb25-56"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb25-57"><a href="#cb25-57"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> total_consumption)) <span class="sc">+</span></span>
+<span id="cb25-58"><a href="#cb25-58"></a>  <span class="fu">geom_col</span>()</span>
+<span id="cb25-59"><a href="#cb25-59"></a><span class="in">```</span></span>
+<span id="cb25-60"><a href="#cb25-60"></a></span>
+<span id="cb25-61"><a href="#cb25-61"></a><span class="fu">## Question 2: Which 5 countries consume the most of each food?</span></span>
+<span id="cb25-62"><a href="#cb25-62"></a></span>
+<span id="cb25-65"><a href="#cb25-65"></a><span class="in">```{r}</span></span>
+<span id="cb25-66"><a href="#cb25-66"></a>fcc <span class="sc">|&gt;</span></span>
+<span id="cb25-67"><a href="#cb25-67"></a>  <span class="fu">select</span>(<span class="sc">-</span>co2_emmission) <span class="sc">|&gt;</span></span>
+<span id="cb25-68"><a href="#cb25-68"></a>  <span class="fu">group_by</span>(food_category) <span class="sc">|&gt;</span></span>
+<span id="cb25-69"><a href="#cb25-69"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">order_by =</span> consumption)</span>
+<span id="cb25-70"><a href="#cb25-70"></a><span class="in">```</span></span>
+<span id="cb25-71"><a href="#cb25-71"></a></span>
+<span id="cb25-74"><a href="#cb25-74"></a><span class="in">```{r}</span></span>
+<span id="cb25-75"><a href="#cb25-75"></a>fcc <span class="sc">|&gt;</span></span>
+<span id="cb25-76"><a href="#cb25-76"></a>  <span class="fu">select</span>(<span class="sc">-</span>co2_emmission) <span class="sc">|&gt;</span></span>
+<span id="cb25-77"><a href="#cb25-77"></a>  <span class="fu">group_by</span>(food_category) <span class="sc">|&gt;</span></span>
+<span id="cb25-78"><a href="#cb25-78"></a>  <span class="fu">slice_max</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">order_by =</span> consumption) <span class="sc">|&gt;</span></span>
+<span id="cb25-79"><a href="#cb25-79"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> consumption)) <span class="sc">+</span></span>
+<span id="cb25-80"><a href="#cb25-80"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb25-81"><a href="#cb25-81"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>food_category)</span>
+<span id="cb25-82"><a href="#cb25-82"></a><span class="in">```</span></span>
+<span id="cb25-83"><a href="#cb25-83"></a></span>
+<span id="cb25-84"><a href="#cb25-84"></a><span class="fu">## Question 3: What does the consumption of each food look like across the world?</span></span>
+<span id="cb25-85"><a href="#cb25-85"></a></span>
+<span id="cb25-88"><a href="#cb25-88"></a><span class="in">```{r}</span></span>
+<span id="cb25-89"><a href="#cb25-89"></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb25-90"><a href="#cb25-90"></a><span class="fu">library</span>(mosaic)</span>
+<span id="cb25-91"><a href="#cb25-91"></a><span class="in">```</span></span>
+<span id="cb25-92"><a href="#cb25-92"></a></span>
+<span id="cb25-95"><a href="#cb25-95"></a><span class="in">```{r}</span></span>
+<span id="cb25-96"><a href="#cb25-96"></a><span class="fu">library</span>(viridisLite)</span>
+<span id="cb25-97"><a href="#cb25-97"></a><span class="in">```</span></span>
+<span id="cb25-98"><a href="#cb25-98"></a></span>
+<span id="cb25-101"><a href="#cb25-101"></a><span class="in">```{r}</span></span>
+<span id="cb25-102"><a href="#cb25-102"></a><span class="co">#| fig-alt: A graph showing eleven world maps. Each map is labelled with a different food group. The map is colored based on how much of each food group is consumed by citizens of a given country consume food from the corresponding food group.</span></span>
+<span id="cb25-103"><a href="#cb25-103"></a><span class="co">#| fig-cap: A series of world maps. The color of each country is determined by the normalized rate at which it consumes a certain food group (kg/person/year). Each map depicts consumption rates for a different food group.</span></span>
+<span id="cb25-104"><a href="#cb25-104"></a></span>
+<span id="cb25-105"><a href="#cb25-105"></a>world_boundaries <span class="ot">=</span> <span class="fu">ne_countries</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb25-106"><a href="#cb25-106"></a></span>
+<span id="cb25-107"><a href="#cb25-107"></a>world_boundaries <span class="sc">|&gt;</span></span>
+<span id="cb25-108"><a href="#cb25-108"></a>  <span class="fu">select</span>(name, geometry) <span class="sc">|&gt;</span></span>
+<span id="cb25-109"><a href="#cb25-109"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"United States of America"</span>, <span class="st">"USA"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb25-110"><a href="#cb25-110"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"Bosnia and Herz."</span>, <span class="st">"Bosnia and Herzegovina"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb25-111"><a href="#cb25-111"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"Czechia"</span>, <span class="st">"Czech Republic"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb25-112"><a href="#cb25-112"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">ifelse</span>(name <span class="sc">==</span> <span class="st">"Taiwan"</span>, <span class="st">"Taiwan. ROC"</span>, name)) <span class="sc">|&gt;</span></span>
+<span id="cb25-113"><a href="#cb25-113"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb25-114"><a href="#cb25-114"></a>    fcc <span class="sc">|&gt;</span> </span>
+<span id="cb25-115"><a href="#cb25-115"></a>      <span class="fu">select</span>(<span class="sc">-</span>co2_emmission) <span class="sc">|&gt;</span></span>
+<span id="cb25-116"><a href="#cb25-116"></a>      <span class="fu">group_by</span>(food_category) <span class="sc">|&gt;</span></span>
+<span id="cb25-117"><a href="#cb25-117"></a>      <span class="fu">mutate</span>(<span class="at">consumption =</span> (consumption <span class="sc">-</span> <span class="fu">mean</span>(consumption))<span class="sc">/</span><span class="fu">sd</span>(consumption)),</span>
+<span id="cb25-118"><a href="#cb25-118"></a>    <span class="fu">join_by</span>(name <span class="sc">==</span> country)) <span class="sc">|&gt;</span></span>
+<span id="cb25-119"><a href="#cb25-119"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> food_category, <span class="at">values_from =</span> consumption) <span class="sc">|&gt;</span></span>
+<span id="cb25-120"><a href="#cb25-120"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="st">"NA"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb25-121"><a href="#cb25-121"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="sc">-</span>name, <span class="sc">-</span>geometry),</span>
+<span id="cb25-122"><a href="#cb25-122"></a>               <span class="at">names_to =</span> <span class="st">"food_category"</span>,</span>
+<span id="cb25-123"><a href="#cb25-123"></a>               <span class="at">values_to =</span> <span class="st">"consumption"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb25-124"><a href="#cb25-124"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb25-125"><a href="#cb25-125"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> consumption)) <span class="sc">+</span></span>
+<span id="cb25-126"><a href="#cb25-126"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>food_category) <span class="sc">+</span></span>
+<span id="cb25-127"><a href="#cb25-127"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="st">"Consumption level"</span>) <span class="sc">+</span></span>
+<span id="cb25-128"><a href="#cb25-128"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Food consumption across the world"</span>) <span class="sc">+</span></span>
+<span id="cb25-129"><a href="#cb25-129"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb25-130"><a href="#cb25-130"></a></span>
+<span id="cb25-131"><a href="#cb25-131"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
