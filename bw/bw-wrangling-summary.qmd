@@ -1,0 +1,13 @@
+---
+title: "Data Wrangling Unit Summary"
+format: html
+---
+
+```{r}
+library(knitr)
+```
+
+
+```{r label, out.width = "85%", fig.cap = "Data visualzation summary"}
+include_graphics("COMP 112 - Summary Sheet - Google Docs.pdf") 
+```

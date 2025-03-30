@@ -32,6 +32,8 @@ book:
       - bw/bw-spatial.qmd
       - bw/bw-exam-1.qmd
       - bw/bw-viz-summary.qmd
+      - bw/bw-exam-2.qmd
+      - bw/bw-wrangling-summary.qmd
 
     - part: "In-class Activities"
       chapters: 
@@ -46,6 +48,7 @@ book:
       - ica/ica-joining.qmd
       - ica/ica-factors.qmd
       - ica/ica-strings.qmd
+      - ica/ica_import.qmd
 
 format:
   html:
