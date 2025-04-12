@@ -1,0 +1,52 @@
+---
+title: "Solo Project"
+format: html
+---
+
+```{r}
+#| label: Initialize project
+#| warning: false
+library(tidyverse)
+library(rnaturalearth)
+library(sf)
+library(RColorBrewer)
+library(viridisLite)
+```
+
+```{r}
+irs_set <- read_csv("..\\data\\auditsData_2019.04.03.csv")
+```
+
+```{r}
+# Filter and clean observations for New York
+irs_ny <- irs_set |>
+  filter(state == "New York") |>
+  mutate(name = str_sub(name, 0, -18))
+```
+
+```{r}
+ny_county_boundaries <- read_sf("..\\data\\NYS_Civil_Boundaries.shp\\Counties.dbf")
+```
+
+```{r}
+#| fig-cap: "Rates calculated using data from 2012-2015. Data source: https://github.com/propublica/auditData"
+
+irs_ny |>
+  ggplot(aes(x = audit_rate)) +
+  geom_histogram(color = "white") +
+  labs(x = "IRS audit rate (per 1000 filings)", y = "Count", title = "Distribution of IRS audit rates in New York State")
+```
+
+
+```{r}
+#| fig-alt: "A map of New York State divided by county. The counties are colored according to the average IRS audit rate per 1000 filings between 2012 and 2015. Westchester County, Kings County (Brooklyn), Queens, New York (Manhattan), Bronx, Suffolk County, and Nassau County have the highest IRS audit rates in the state. In general, audit rates are higher in counties within or surrounding New York City."
+#| fig-cap: "Rates calculated using data from 2012-2015. Data source: https://github.com/propublica/auditData"
+
+ggplot() +
+  geom_sf(data = ny_county_boundaries,
+          aes(fill = irs_ny$audit_rate),
+          color = "white") +
+  scale_fill_viridis_c(name = "IRS audit rate (per 1000 filings)", values = scales::rescale(seq(0, 100, by = 5))) +
+  labs(title = "IRS Audit Rate in New York State by County", x = "Longitude", y = "Latitude")
+```
+The average IRS audit rate per 1000 filings is highest in counties within or surrounding New York City. Bronx and New York (Manhattan), in particular, have the highest IRS audit rates. All counties north of 41.3 degrees N typically have a file rate between 6.5-8.2.

@@ -34,6 +34,7 @@ book:
       - bw/bw-viz-summary.qmd
       - bw/bw-exam-2.qmd
       - bw/bw-wrangling-summary.qmd
+      - bw/bw-solo-project.qmd
 
     - part: "In-class Activities"
       chapters: 
