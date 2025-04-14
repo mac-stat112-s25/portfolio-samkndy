@@ -1,5 +1,5 @@
 ---
-title: "Data Wrangling Unit Summary"
+title: "Visualization"
 format: html
 ---
 
@@ -9,5 +9,5 @@ library(knitr)
 
 
 ```{r label, out.width = "85%", fig.cap = "Data visualzation summary"}
-include_graphics("COMP 112 - Summary Sheet - Google Docs.pdf") 
+include_graphics("COMP 112 - Data Visualization Summary - Google Docs.pdf") 
 ```
