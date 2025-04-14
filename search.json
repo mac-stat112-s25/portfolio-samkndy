@@ -67,122 +67,122 @@
   {
     "objectID": "bw/bw-exam-1.html",
     "href": "bw/bw-exam-1.html",
-    "title": "\n6  Food Consumption\n",
+    "title": "\n6  Exam 1\n",
     "section": "",
     "text": "7 Grand question: What does the consumption of each food category in each country look like?\nlibrary(tidyverse)\nlibrary(tidytuesdayR)\ntuesdata &lt;- tt_load('2020-02-18')\n\n---- Compiling #TidyTuesday Information for 2020-02-18 ----\n--- There is 1 file available ---\n\n\n── Downloading files ───────────────────────────────────────────────────────────\n\n  1 of 1: \"food_consumption.csv\"\n\nfc &lt;- tuesdata$food_consumption",
     "crumbs": [
       "Best Work",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Food Consumption</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exam 1</span>"
     ]
   },
   {
     "objectID": "bw/bw-exam-1.html#exploring-the-data-set",
     "href": "bw/bw-exam-1.html#exploring-the-data-set",
-    "title": "\n6  Food Consumption\n",
+    "title": "\n6  Exam 1\n",
     "section": "\n7.1 Exploring the data set",
     "text": "7.1 Exploring the data set\n\nhead(fc) # First six rows in fc\n\n# A tibble: 6 × 4\n  country   food_category consumption co2_emmission\n  &lt;chr&gt;     &lt;chr&gt;               &lt;dbl&gt;         &lt;dbl&gt;\n1 Argentina Pork                10.5          37.2 \n2 Argentina Poultry             38.7          41.5 \n3 Argentina Beef                55.5        1712   \n4 Argentina Lamb & Goat          1.56         54.6 \n5 Argentina Fish                 4.36          6.96\n6 Argentina Eggs                11.4          10.5 \n\ntail(fc) # Last six rows in fc\n\n# A tibble: 6 × 4\n  country    food_category            consumption co2_emmission\n  &lt;chr&gt;      &lt;chr&gt;                          &lt;dbl&gt;         &lt;dbl&gt;\n1 Bangladesh Eggs                            2.08          1.91\n2 Bangladesh Milk - inc. cheese             21.9          31.2 \n3 Bangladesh Wheat and Wheat Products       17.5           3.33\n4 Bangladesh Rice                          172.          220.  \n5 Bangladesh Soybeans                        0.61          0.27\n6 Bangladesh Nuts inc. Peanut Butter         0.72          1.27\n\nnrow(fc) # Number of columns in fc\n\n[1] 1430\n\nncol(fc) # Number of rows in fc\n\n[1] 4",
     "crumbs": [
       "Best Work",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Food Consumption</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exam 1</span>"
     ]
   },
   {
     "objectID": "bw/bw-exam-1.html#understanding-variables-individually",
     "href": "bw/bw-exam-1.html#understanding-variables-individually",
-    "title": "\n6  Food Consumption\n",
+    "title": "\n6  Exam 1\n",
     "section": "\n7.2 Understanding variables individually",
     "text": "7.2 Understanding variables individually\n3 variables involved in grand research question: “country”, “food_category”, and “consumption”\n\nggplot(fc, aes(x = country)) +\n  geom_bar(color = \"white\")\n\n\n\n\n\n\n\n\nggplot(fc, aes(x = food_category)) +\n  geom_bar(color = \"white\")\n\n\n\n\n\n\n\n\nggplot(fc, aes(x = consumption)) +\n  geom_density(fill = \"red\", alpha = 0.5)",
     "crumbs": [
       "Best Work",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Food Consumption</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exam 1</span>"
     ]
   },
   {
     "objectID": "bw/bw-exam-1.html#understanding-consumption",
     "href": "bw/bw-exam-1.html#understanding-consumption",
-    "title": "\n6  Food Consumption\n",
+    "title": "\n6  Exam 1\n",
     "section": "\n7.3 Understanding consumption",
     "text": "7.3 Understanding consumption\n\n# Relationship between overall food consumption and food category\n#| fig-height: 22\nggplot(fc, aes(x=consumption, y=food_category)) +\n  geom_boxplot()\n\n\n\n\n\n\n\n\n# Relationship between overall food consumption and country\n#| fig-height: 30\nggplot(fc, aes(x=consumption)) +\n  geom_histogram() +\n  facet_wrap(~country)\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.",
     "crumbs": [
       "Best Work",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Food Consumption</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exam 1</span>"
     ]
   },
   {
     "objectID": "bw/bw-exam-1.html#answering-grand-research-question",
     "href": "bw/bw-exam-1.html#answering-grand-research-question",
-    "title": "\n6  Food Consumption\n",
+    "title": "\n6  Exam 1\n",
     "section": "\n7.4 Answering grand research question",
     "text": "7.4 Answering grand research question\n\nlibrary(mosaic)\nlibrary(rnaturalearth)\nlibrary(viridisLite)\nworld_boundaries &lt;- ne_countries(returnclass = \"sf\")\nworld_map &lt;- map_data(\"world\")\n\n\n#|fig-cap: \"Global food consumption separated by food category. Data source: https://github.com/rfordatascience/tidytuesday/blob/main/data/2020/2020-02-18/readme.md\"\n#|fig-alt: \"Eleven maps showing food consumption rates across the world faceted by food category. The vast majority of nations consume less than 100kg/person/year in food. The exception to this trend is milk, which is consumed at high rates in North America, South America, and Europe.\"\n\nggplot(fc, aes(map_id = country, fill = consumption)) +\n  geom_map(map = world_map, color = \"white\") +\n  scale_fill_viridis_c(\"Food consumption (kg/person/year\") +\n  expand_limits(x = world_map$long, y = world_map$lat) +\n  facet_wrap(~food_category) +\n  theme_map() \n\n\n\n\n\n\n\nThe vast majority of nations consume less than 100kg/person/year in food. The exception to this trend is milk, which is consumed at high rates in North America, South America, and Europe. Additionally, rates of wheat consumption are higher in the northern hemisphere.",
     "crumbs": [
       "Best Work",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Food Consumption</span>"
-    ]
-  },
-  {
-    "objectID": "bw/bw-viz-summary.html",
-    "href": "bw/bw-viz-summary.html",
-    "title": "\n7  Data Visualization Unit Summary\n",
-    "section": "",
-    "text": "library(knitr)\n\n\ninclude_graphics(\"COMP 112 - Data Visualization Summary - Google Docs.pdf\") \n\n\n\nData visualzation summary",
-    "crumbs": [
-      "Best Work",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Data Visualization Unit Summary</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Exam 1</span>"
     ]
   },
   {
     "objectID": "bw/bw-exam-2.html",
     "href": "bw/bw-exam-2.html",
-    "title": "\n8  Food Consumption 2\n",
+    "title": "\n7  Exam 2\n",
     "section": "",
-    "text": "8.1 Question 1: Which 5 countries consume the most food?\nfcc |&gt;\n  group_by(country) |&gt;\n  summarise(total_consumption = sum(consumption)) |&gt;\n  arrange(desc(total_consumption)) |&gt;\n  head(5)\n\n# A tibble: 5 × 2\n  country     total_consumption\n  &lt;chr&gt;                   &lt;dbl&gt;\n1 Finland                  640.\n2 Lithuania                555.\n3 Sweden                   550 \n4 Netherlands              534.\n5 Albania                  533.\nfcc |&gt;\n  group_by(country) |&gt;\n  summarise(total_consumption = sum(consumption)) |&gt;\n  arrange(desc(total_consumption)) |&gt;\n  head(5) |&gt;\n  ggplot(aes(x = country, y = total_consumption)) +\n  geom_col()",
+    "text": "7.1 Question 1: Which 5 countries consume the most food?\nfcc |&gt;\n  group_by(country) |&gt;\n  summarise(total_consumption = sum(consumption)) |&gt;\n  arrange(desc(total_consumption)) |&gt;\n  head(5)\n\n# A tibble: 5 × 2\n  country     total_consumption\n  &lt;chr&gt;                   &lt;dbl&gt;\n1 Finland                  640.\n2 Lithuania                555.\n3 Sweden                   550 \n4 Netherlands              534.\n5 Albania                  533.\nfcc |&gt;\n  group_by(country) |&gt;\n  summarise(total_consumption = sum(consumption)) |&gt;\n  arrange(desc(total_consumption)) |&gt;\n  head(5) |&gt;\n  ggplot(aes(x = country, y = total_consumption)) +\n  geom_col()",
     "crumbs": [
       "Best Work",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Food Consumption 2</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exam 2</span>"
     ]
   },
   {
     "objectID": "bw/bw-exam-2.html#question-2-which-5-countries-consume-the-most-of-each-food",
     "href": "bw/bw-exam-2.html#question-2-which-5-countries-consume-the-most-of-each-food",
-    "title": "\n8  Food Consumption 2\n",
-    "section": "\n8.2 Question 2: Which 5 countries consume the most of each food?",
-    "text": "8.2 Question 2: Which 5 countries consume the most of each food?\n\nfcc |&gt;\n  select(-co2_emmission) |&gt;\n  group_by(food_category) |&gt;\n  slice_max(n = 5, order_by = consumption)\n\n# A tibble: 55 × 3\n# Groups:   food_category [11]\n   country   food_category consumption\n   &lt;chr&gt;     &lt;fct&gt;               &lt;dbl&gt;\n 1 Argentina Beef                 55.5\n 2 Brazil    Beef                 39.2\n 3 USA       Beef                 36.2\n 4 Australia Beef                 33.9\n 5 Bermuda   Beef                 33.2\n 6 Japan     Eggs                 19.2\n 7 Paraguay  Eggs                 18.8\n 8 China     Eggs                 18.8\n 9 Mexico    Eggs                 18.3\n10 Ukraine   Eggs                 18.0\n# ℹ 45 more rows\n\n\n\nfcc |&gt;\n  select(-co2_emmission) |&gt;\n  group_by(food_category) |&gt;\n  slice_max(n = 5, order_by = consumption) |&gt;\n  ggplot(aes(x = country, y = consumption)) +\n  geom_col() +\n  facet_wrap(~food_category)",
+    "title": "\n7  Exam 2\n",
+    "section": "\n7.2 Question 2: Which 5 countries consume the most of each food?",
+    "text": "7.2 Question 2: Which 5 countries consume the most of each food?\n\nfcc |&gt;\n  select(-co2_emmission) |&gt;\n  group_by(food_category) |&gt;\n  slice_max(n = 5, order_by = consumption)\n\n# A tibble: 55 × 3\n# Groups:   food_category [11]\n   country   food_category consumption\n   &lt;chr&gt;     &lt;fct&gt;               &lt;dbl&gt;\n 1 Argentina Beef                 55.5\n 2 Brazil    Beef                 39.2\n 3 USA       Beef                 36.2\n 4 Australia Beef                 33.9\n 5 Bermuda   Beef                 33.2\n 6 Japan     Eggs                 19.2\n 7 Paraguay  Eggs                 18.8\n 8 China     Eggs                 18.8\n 9 Mexico    Eggs                 18.3\n10 Ukraine   Eggs                 18.0\n# ℹ 45 more rows\n\n\n\nfcc |&gt;\n  select(-co2_emmission) |&gt;\n  group_by(food_category) |&gt;\n  slice_max(n = 5, order_by = consumption) |&gt;\n  ggplot(aes(x = country, y = consumption)) +\n  geom_col() +\n  facet_wrap(~food_category)",
     "crumbs": [
       "Best Work",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Food Consumption 2</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exam 2</span>"
     ]
   },
   {
     "objectID": "bw/bw-exam-2.html#question-3-what-does-the-consumption-of-each-food-look-like-across-the-world",
     "href": "bw/bw-exam-2.html#question-3-what-does-the-consumption-of-each-food-look-like-across-the-world",
-    "title": "\n8  Food Consumption 2\n",
-    "section": "\n8.3 Question 3: What does the consumption of each food look like across the world?",
-    "text": "8.3 Question 3: What does the consumption of each food look like across the world?\n\nlibrary(rnaturalearth)\nlibrary(mosaic)\n\nRegistered S3 method overwritten by 'mosaic':\n  method                           from   \n  fortify.SpatialPolygonsDataFrame ggplot2\n\n\n\nThe 'mosaic' package masks several functions from core packages in order to add \nadditional features.  The original behavior of these functions should not be affected by this.\n\n\n\nAttaching package: 'mosaic'\n\n\nThe following object is masked from 'package:Matrix':\n\n    mean\n\n\nThe following objects are masked from 'package:dplyr':\n\n    count, do, tally\n\n\nThe following object is masked from 'package:purrr':\n\n    cross\n\n\nThe following object is masked from 'package:ggplot2':\n\n    stat\n\n\nThe following objects are masked from 'package:stats':\n\n    binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test,\n    quantile, sd, t.test, var\n\n\nThe following objects are masked from 'package:base':\n\n    max, mean, min, prod, range, sample, sum\n\n\n\nlibrary(viridisLite)\n\n\nworld_boundaries = ne_countries(returnclass = \"sf\")\n\nworld_boundaries |&gt;\n  select(name, geometry) |&gt;\n  mutate(name = ifelse(name == \"United States of America\", \"USA\", name)) |&gt;\n  mutate(name = ifelse(name == \"Bosnia and Herz.\", \"Bosnia and Herzegovina\", name)) |&gt;\n  mutate(name = ifelse(name == \"Czechia\", \"Czech Republic\", name)) |&gt;\n  mutate(name = ifelse(name == \"Taiwan\", \"Taiwan. ROC\", name)) |&gt;\n  left_join(\n    fcc |&gt; \n      select(-co2_emmission) |&gt;\n      group_by(food_category) |&gt;\n      mutate(consumption = (consumption - mean(consumption))/sd(consumption)),\n    join_by(name == country)) |&gt;\n  pivot_wider(names_from = food_category, values_from = consumption) |&gt;\n  select(-\"NA\") |&gt;\n  pivot_longer(cols = c(-name, -geometry),\n               names_to = \"food_category\",\n               values_to = \"consumption\") |&gt;\n  ggplot() +\n  geom_sf(aes(fill = consumption)) +\n  facet_wrap(~food_category) +\n  scale_fill_viridis_c(\"Consumption level\") +\n  labs(title = \"Food consumption across the world\") +\n  theme(legend.position = \"bottom\")\n\n\n\nA series of world maps. The color of each country is determined by the normalized rate at which it consumes a certain food group (kg/person/year). Each map depicts consumption rates for a different food group.",
+    "title": "\n7  Exam 2\n",
+    "section": "\n7.3 Question 3: What does the consumption of each food look like across the world?",
+    "text": "7.3 Question 3: What does the consumption of each food look like across the world?\n\nlibrary(rnaturalearth)\nlibrary(mosaic)\n\nRegistered S3 method overwritten by 'mosaic':\n  method                           from   \n  fortify.SpatialPolygonsDataFrame ggplot2\n\n\n\nThe 'mosaic' package masks several functions from core packages in order to add \nadditional features.  The original behavior of these functions should not be affected by this.\n\n\n\nAttaching package: 'mosaic'\n\n\nThe following object is masked from 'package:Matrix':\n\n    mean\n\n\nThe following objects are masked from 'package:dplyr':\n\n    count, do, tally\n\n\nThe following object is masked from 'package:purrr':\n\n    cross\n\n\nThe following object is masked from 'package:ggplot2':\n\n    stat\n\n\nThe following objects are masked from 'package:stats':\n\n    binom.test, cor, cor.test, cov, fivenum, IQR, median, prop.test,\n    quantile, sd, t.test, var\n\n\nThe following objects are masked from 'package:base':\n\n    max, mean, min, prod, range, sample, sum\n\n\n\nlibrary(viridisLite)\n\n\nworld_boundaries = ne_countries(returnclass = \"sf\")\n\nworld_boundaries |&gt;\n  select(name, geometry) |&gt;\n  mutate(name = ifelse(name == \"United States of America\", \"USA\", name)) |&gt;\n  mutate(name = ifelse(name == \"Bosnia and Herz.\", \"Bosnia and Herzegovina\", name)) |&gt;\n  mutate(name = ifelse(name == \"Czechia\", \"Czech Republic\", name)) |&gt;\n  mutate(name = ifelse(name == \"Taiwan\", \"Taiwan. ROC\", name)) |&gt;\n  left_join(\n    fcc |&gt; \n      select(-co2_emmission) |&gt;\n      group_by(food_category) |&gt;\n      mutate(consumption = (consumption - mean(consumption))/sd(consumption)),\n    join_by(name == country)) |&gt;\n  pivot_wider(names_from = food_category, values_from = consumption) |&gt;\n  select(-\"NA\") |&gt;\n  pivot_longer(cols = c(-name, -geometry),\n               names_to = \"food_category\",\n               values_to = \"consumption\") |&gt;\n  ggplot() +\n  geom_sf(aes(fill = consumption)) +\n  facet_wrap(~food_category) +\n  scale_fill_viridis_c(\"Consumption level\") +\n  labs(title = \"Food consumption across the world\") +\n  theme(legend.position = \"bottom\")\n\n\n\nA series of world maps. The color of each country is determined by the normalized rate at which it consumes a certain food group (kg/person/year). Each map depicts consumption rates for a different food group.",
     "crumbs": [
       "Best Work",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Food Consumption 2</span>"
-    ]
-  },
-  {
-    "objectID": "bw/bw-wrangling-summary.html",
-    "href": "bw/bw-wrangling-summary.html",
-    "title": "\n9  Data Wrangling Unit Summary\n",
-    "section": "",
-    "text": "library(knitr)\n\n\ninclude_graphics(\"COMP 112 - Summary Sheet - Google Docs.pdf\") \n\n\n\nData visualzation summary",
-    "crumbs": [
-      "Best Work",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data Wrangling Unit Summary</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Exam 2</span>"
     ]
   },
   {
     "objectID": "bw/bw-solo-project.html",
     "href": "bw/bw-solo-project.html",
-    "title": "\n10  Solo Project\n",
+    "title": "\n8  Solo Project\n",
     "section": "",
     "text": "library(tidyverse)\nlibrary(rnaturalearth)\nlibrary(sf)\nlibrary(RColorBrewer)\nlibrary(viridisLite)\n\n\nirs_set &lt;- read_csv(\"..\\\\data\\\\auditsData_2019.04.03.csv\")\n\nRows: 3141 Columns: 7\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): fips, name, state\ndbl (4): Number_of_returns, estimated_exams, audit_rate, audit_rate_trunk\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n# Filter and clean observations for New York\nirs_ny &lt;- irs_set |&gt;\n  filter(state == \"New York\") |&gt;\n  mutate(name = str_sub(name, 0, -18))\n\n\nny_county_boundaries &lt;- read_sf(\"..\\\\data\\\\NYS_Civil_Boundaries.shp\\\\Counties.dbf\")\n\n\nirs_ny |&gt;\n  ggplot(aes(x = audit_rate)) +\n  geom_histogram(color = \"white\") +\n  labs(x = \"IRS audit rate (per 1000 filings)\", y = \"Count\", title = \"Distribution of IRS audit rates in New York State\")\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\nRates calculated using data from 2012-2015. Data source: https://github.com/propublica/auditData\n\n\n\n\nggplot() +\n  geom_sf(data = ny_county_boundaries,\n          aes(fill = irs_ny$audit_rate),\n          color = \"white\") +\n  scale_fill_viridis_c(name = \"IRS audit rate (per 1000 filings)\", values = scales::rescale(seq(0, 100, by = 5))) +\n  labs(title = \"IRS Audit Rate in New York State by County\", x = \"Longitude\", y = \"Latitude\")\n\n\n\nRates calculated using data from 2012-2015. Data source: https://github.com/propublica/auditData\n\n\n\nThe average IRS audit rate per 1000 filings is highest in counties within or surrounding New York City. Bronx and New York (Manhattan), in particular, have the highest IRS audit rates. All counties north of 41.3 degrees N typically have a file rate between 6.5-8.2.",
     "crumbs": [
       "Best Work",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Solo Project</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Solo Project</span>"
+    ]
+  },
+  {
+    "objectID": "bw/Summary Sheets/bw-wrangling-summary.html",
+    "href": "bw/Summary Sheets/bw-wrangling-summary.html",
+    "title": "\n9  Wrangling\n",
+    "section": "",
+    "text": "library(knitr)\n\n\ninclude_graphics(\"COMP 112 - Summary Sheet - Google Docs.pdf\") \n\n\n\nData visualzation summary",
+    "crumbs": [
+      "Summary Sheets",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Wrangling</span>"
+    ]
+  },
+  {
+    "objectID": "bw/Summary Sheets/bw-viz-summary.html",
+    "href": "bw/Summary Sheets/bw-viz-summary.html",
+    "title": "\n10  Visualization\n",
+    "section": "",
+    "text": "library(knitr)\n\n\ninclude_graphics(\"COMP 112 - Data Visualization Summary - Google Docs.pdf\") \n\n\n\nData visualzation summary",
+    "crumbs": [
+      "Summary Sheets",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Visualization</span>"
     ]
   },
   {
