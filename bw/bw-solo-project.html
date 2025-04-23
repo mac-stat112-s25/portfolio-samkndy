@@ -317,7 +317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../bw/bw-uni.html">Best Work</a></li><li class="breadcrumb-item"><a href="../bw/bw-solo-project.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Solo Project</span></a></li></ol></nav><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
 <span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Solo Project</span>
-</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -332,15 +332,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header><div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(rnaturalearth)</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(sf)</span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(RColorBrewer)</span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(viridisLite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>irs_set <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"..</span><span class="sc">\\</span><span class="st">data</span><span class="sc">\\</span><span class="st">auditsData_2019.04.03.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>irs_set <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"..</span><span class="sc">\\</span><span class="st">data</span><span class="sc">\\</span><span class="st">auditsData_2019.04.03.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stderr">
 <pre><code>Rows: 3141 Columns: 7
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
@@ -352,40 +353,43 @@ dbl (4): Number_of_returns, estimated_exams, audit_rate, audit_rate_trunk
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Filter and clean observations for New York</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># Filter and clean observations for New York</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>irs_ny <span class="ot">&lt;-</span> irs_set <span class="sc">|&gt;</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"New York"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">str_sub</span>(name, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">18</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>ny_county_boundaries <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"..</span><span class="sc">\\</span><span class="st">data</span><span class="sc">\\</span><span class="st">NYS_Civil_Boundaries.shp</span><span class="sc">\\</span><span class="st">Counties.dbf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>ny_county_boundaries <span class="ot">&lt;-</span> <span class="fu">read_sf</span>(<span class="st">"..</span><span class="sc">\\</span><span class="st">data</span><span class="sc">\\</span><span class="st">NYS_Civil_Boundaries.shp</span><span class="sc">\\</span><span class="st">Counties.dbf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>irs_ny <span class="sc">|&gt;</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>irs_ny <span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> audit_rate)) <span class="sc">+</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"IRS audit rate (per 1000 filings)"</span>, <span class="at">y =</span> <span class="st">"Count"</span>, <span class="at">title =</span> <span class="st">"Distribution of IRS audit rates in New York State"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"IRS audit rate (per 1000 filings)"</span>, <span class="at">y =</span> <span class="st">"Count"</span>, <span class="at">title =</span> <span class="st">"Distribution of IRS audit rates in New York State"</span>, <span class="at">caption =</span> <span class="st">"Rates calculated using data from 2012-2015. Data source: https://github.com/propublica/auditData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stderr">
 <pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div>
 <figure class="figure"><p><img src="bw-solo-project_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Rates calculated using data from 2012-2015. Data source: https://github.com/propublica/auditData</figcaption></figure>
+</figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> ny_county_boundaries,</span>
 <span id="cb8-3"><a href="#cb8-3"></a>          <span class="fu">aes</span>(<span class="at">fill =</span> irs_ny<span class="sc">$</span>audit_rate),</span>
 <span id="cb8-4"><a href="#cb8-4"></a>          <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">"IRS audit rate (per 1000 filings)"</span>, <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>))) <span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"IRS Audit Rate in New York State by County"</span>, <span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="bw-solo-project_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" alt="A map of New York State divided by county. The counties are colored according to the average IRS audit rate per 1000 filings between 2012 and 2015. Westchester County, Kings County (Brooklyn), Queens, New York (Manhattan), Bronx, Suffolk County, and Nassau County have the highest IRS audit rates in the state. In general, audit rates are higher in counties within or surrounding New York City." width="672"></p>
-<figcaption>Rates calculated using data from 2012-2015. Data source: https://github.com/propublica/auditData</figcaption></figure>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">"IRS audit rate"</span>, <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>))) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"IRS Audit Rate (per 1000 filings) in New York State by County"</span>, <span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>, <span class="at">caption =</span> <span class="st">"Rates calculated using data from 2012-2015. Data source: https://github.com/propublica/auditData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="bw-solo-project_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" alt="A map of New York State divided by county. The counties are colored according to the average IRS audit rate per 1000 filings between 2012 and 2015. Westchester County, Kings County (Brooklyn), Queens, New York (Manhattan), Bronx, Suffolk County, and Nassau County have the highest IRS audit rates in the state. In general, audit rates are higher in counties within or surrounding New York City." width="768"></p>
+</figure>
 </div>
 </div>
 </div>
@@ -1056,27 +1060,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-37"><a href="#cb9-37"></a><span class="in">```</span></span>
 <span id="cb9-38"><a href="#cb9-38"></a></span>
 <span id="cb9-41"><a href="#cb9-41"></a><span class="in">```{r}</span></span>
-<span id="cb9-42"><a href="#cb9-42"></a><span class="co">#| fig-cap: "Rates calculated using data from 2012-2015. Data source: https://github.com/propublica/auditData"</span></span>
-<span id="cb9-43"><a href="#cb9-43"></a></span>
-<span id="cb9-44"><a href="#cb9-44"></a>irs_ny <span class="sc">|&gt;</span></span>
-<span id="cb9-45"><a href="#cb9-45"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> audit_rate)) <span class="sc">+</span></span>
-<span id="cb9-46"><a href="#cb9-46"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb9-47"><a href="#cb9-47"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"IRS audit rate (per 1000 filings)"</span>, <span class="at">y =</span> <span class="st">"Count"</span>, <span class="at">title =</span> <span class="st">"Distribution of IRS audit rates in New York State"</span>)</span>
-<span id="cb9-48"><a href="#cb9-48"></a><span class="in">```</span></span>
-<span id="cb9-49"><a href="#cb9-49"></a></span>
-<span id="cb9-50"><a href="#cb9-50"></a></span>
-<span id="cb9-53"><a href="#cb9-53"></a><span class="in">```{r}</span></span>
-<span id="cb9-54"><a href="#cb9-54"></a><span class="co">#| fig-alt: "A map of New York State divided by county. The counties are colored according to the average IRS audit rate per 1000 filings between 2012 and 2015. Westchester County, Kings County (Brooklyn), Queens, New York (Manhattan), Bronx, Suffolk County, and Nassau County have the highest IRS audit rates in the state. In general, audit rates are higher in counties within or surrounding New York City."</span></span>
-<span id="cb9-55"><a href="#cb9-55"></a><span class="co">#| fig-cap: "Rates calculated using data from 2012-2015. Data source: https://github.com/propublica/auditData"</span></span>
-<span id="cb9-56"><a href="#cb9-56"></a></span>
-<span id="cb9-57"><a href="#cb9-57"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb9-58"><a href="#cb9-58"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> ny_county_boundaries,</span>
-<span id="cb9-59"><a href="#cb9-59"></a>          <span class="fu">aes</span>(<span class="at">fill =</span> irs_ny<span class="sc">$</span>audit_rate),</span>
-<span id="cb9-60"><a href="#cb9-60"></a>          <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb9-61"><a href="#cb9-61"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">"IRS audit rate (per 1000 filings)"</span>, <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>))) <span class="sc">+</span></span>
-<span id="cb9-62"><a href="#cb9-62"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"IRS Audit Rate in New York State by County"</span>, <span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>)</span>
-<span id="cb9-63"><a href="#cb9-63"></a><span class="in">```</span></span>
-<span id="cb9-64"><a href="#cb9-64"></a>The average IRS audit rate per 1000 filings is highest in counties within or surrounding New York City. Bronx and New York (Manhattan), in particular, have the highest IRS audit rates. All counties north of 41.3 degrees N typically have a file rate between 6.5-8.2.</span>
+<span id="cb9-42"><a href="#cb9-42"></a>irs_ny <span class="sc">|&gt;</span></span>
+<span id="cb9-43"><a href="#cb9-43"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> audit_rate)) <span class="sc">+</span></span>
+<span id="cb9-44"><a href="#cb9-44"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb9-45"><a href="#cb9-45"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"IRS audit rate (per 1000 filings)"</span>, <span class="at">y =</span> <span class="st">"Count"</span>, <span class="at">title =</span> <span class="st">"Distribution of IRS audit rates in New York State"</span>, <span class="at">caption =</span> <span class="st">"Rates calculated using data from 2012-2015. Data source: https://github.com/propublica/auditData"</span>)</span>
+<span id="cb9-46"><a href="#cb9-46"></a><span class="in">```</span></span>
+<span id="cb9-47"><a href="#cb9-47"></a></span>
+<span id="cb9-48"><a href="#cb9-48"></a></span>
+<span id="cb9-51"><a href="#cb9-51"></a><span class="in">```{r}</span></span>
+<span id="cb9-52"><a href="#cb9-52"></a><span class="co">#| fig-width: 8</span></span>
+<span id="cb9-53"><a href="#cb9-53"></a><span class="co">#| fig-alt: "A map of New York State divided by county. The counties are colored according to the average IRS audit rate per 1000 filings between 2012 and 2015. Westchester County, Kings County (Brooklyn), Queens, New York (Manhattan), Bronx, Suffolk County, and Nassau County have the highest IRS audit rates in the state. In general, audit rates are higher in counties within or surrounding New York City."</span></span>
+<span id="cb9-54"><a href="#cb9-54"></a></span>
+<span id="cb9-55"><a href="#cb9-55"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb9-56"><a href="#cb9-56"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> ny_county_boundaries,</span>
+<span id="cb9-57"><a href="#cb9-57"></a>          <span class="fu">aes</span>(<span class="at">fill =</span> irs_ny<span class="sc">$</span>audit_rate),</span>
+<span id="cb9-58"><a href="#cb9-58"></a>          <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb9-59"><a href="#cb9-59"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">name =</span> <span class="st">"IRS audit rate"</span>, <span class="at">values =</span> scales<span class="sc">::</span><span class="fu">rescale</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>))) <span class="sc">+</span></span>
+<span id="cb9-60"><a href="#cb9-60"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb9-61"><a href="#cb9-61"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"IRS Audit Rate (per 1000 filings) in New York State by County"</span>, <span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>, <span class="at">caption =</span> <span class="st">"Rates calculated using data from 2012-2015. Data source: https://github.com/propublica/auditData"</span>)</span>
+<span id="cb9-62"><a href="#cb9-62"></a><span class="in">```</span></span>
+<span id="cb9-63"><a href="#cb9-63"></a>The average IRS audit rate per 1000 filings is highest in counties within or surrounding New York City. Bronx and New York (Manhattan), in particular, have the highest IRS audit rates. All counties north of 41.3 degrees N typically have a file rate between 6.5-8.2.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
